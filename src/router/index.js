@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Laundry from "../views/Laundry.vue";
 import OrderDetail from "../views/OrderDetail.vue";
 import HistoryView from "../views/History.vue";
 import SearchView from "../views/SearchView.vue";
@@ -14,11 +13,6 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-  },
-  {
-    path: "/laundry",
-    name: "Laundry",
-    component: Laundry,
   },
   {
     path: "/orderDetail",

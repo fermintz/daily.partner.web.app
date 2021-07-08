@@ -2,15 +2,13 @@
   <div class="home">
     <Snackbars ref="snackbar"/>
     <Confirm ref="confirm" />
+    <Checking ref="checking"/>
     <PhotoSetModal ref="photoSet" />
     <Progress />
     <Header />
     <StateTabs @status="tabIndex = $event" />
     
-    <div v-if="[2, 3].includes(tabIndex)" class="list">
-      <LaundryCard v-for="item in 2" :key="item" />
-    </div>
-    <div v-else class="list">
+    <div class="list">
       <OrderCard
         v-for="item in 2"
         :key="item"
@@ -25,22 +23,22 @@
 import Header from "@/components/header.vue";
 import StateTabs from "@/components/stateTabs.vue";
 import OrderCard from "@/components/orderCard.vue";
-import LaundryCard from "@/components/laundryCard.vue";
 import Confirm from "@/components/modal/confirm.vue";
 import PhotoSetModal from "@/components/modal/photo.vue";
 import Snackbars from "@/components/snackbars.vue";
 import Progress from '../components/modal/progress.vue';
+import Checking from '@/components/modal/checking.vue'
 
 export default {
   components: {
     Header,
     StateTabs,
     OrderCard,
-    LaundryCard,
     Confirm,
     PhotoSetModal,
     Snackbars,
-    Progress
+    Progress,
+    Checking
   },
   data() {
     return {
@@ -50,7 +48,7 @@ export default {
   mounted() {},
   methods: {
     modalHandle(e) {
-      this.$refs.photoSet.handle(e);
+      this.$refs.checking.handle(e);
     },
     snackHandle(e) {
       this.$refs.snackbar.handle(e.visible)

@@ -2,7 +2,7 @@
   <div class="item" @click="$router.push('orderDetail')">
     <div class="item-head">
       <div class="icons">
-        <span>주문완료</span>
+        <span>검수대기</span>
         <span class="refound">반품</span>
       </div>
       <div class="order-date">
@@ -11,12 +11,11 @@
     </div>
     <div class="item-body">
       <div class="top">
-        <div class="pickup-info">
+        <div class="product-info">
           <dl class="box">
-            <dt>월요일</dt>
-            <dd>오전</dd>
+            <dt>11</dt>
+            <dd>주문상품</dd>
           </dl>
-          <span>21.01.26</span>
         </div>
         <div class="user-info">
           <dl class="name">
@@ -30,28 +29,16 @@
             <dt><v-icon>mdi-map-marker</v-icon></dt>
             <dd>부산광역시 금정구 부산대학로 63번길 2 과학기술연구동 201호</dd>
           </dl>
-          <dl class="gate">
-            <dt><v-icon>mdi-lock</v-icon></dt>
-            <dd>경비 열쇠 9876 종</dd>
-          </dl>
-        </div>
-        <div class="btns">
-          <v-btn text @click.stop="snackbar(true, '주소가 복사되었습니다')">주소복사</v-btn>
-          <v-btn text >네비안내</v-btn>
         </div>
       </div>
       <div class="bottom">
-        <dl>
-          <dt>상품</dt>
-          <dd>11개</dd>
-        </dl>
         <dl>
           <dt>주문금액</dt>
           <dd>15,900원</dd>
         </dl>
       </div>
       <v-btn class="finishBtn" text @click.stop="modal(true)">
-        수거완료
+        검수시작
       </v-btn>
     </div>
     <div class="item-bottom">
@@ -83,7 +70,7 @@ export default {
   margin-top:10px;
   background:#fff;
   border-top:1px solid #e2e2e2;
-  border-bottom:1px solid #e2e2e2;
+  border-bottom:1px solid #c2c2c2;
   min-height:100px;
 
   .item-head{
@@ -121,29 +108,41 @@ export default {
   }
   .item-body{
     position: relative;
-    padding:10px;
+    padding:15px;
     min-height:150px;
 
     .top{
       display:flex;
 
-      .pickup-info{
+      .product-info{
         display:flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-right:15px;
+        margin-right:20px;
 
         dl{
           display:flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          width:60px;
-          height:60px;
-          border-radius:10px;
-          border:1px solid #008BE8;
-          dt{font-size:11px;margin-bottom:2px;}
-          dd{font-size:18px;font-weight:600;color:#008BE8;line-height:16px;}
+
+
+          dt{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:100px;
+            width:50px;
+            height:50px;
+            background:#f2f2f2;
+            font-size:18px;
+            font-weight:600;
+            color:#008BE8;
+            line-height:16px;
+          }
+
+          dd{font-size:10px;margin-top:5px;}
+          
         }
 
         span{font-size:11px;margin-top:5px;color:#008BE8;text-align:center;width:100%;}
@@ -191,22 +190,6 @@ export default {
           }
         }
       }
-
-      .btns{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left:15px;
-        
-        .v-btn{
-          height:22px;
-          min-width:unset;
-          padding:0px 5px;
-          border:1px solid #e2e2e2;
-          font-size:10px;
-          margin-bottom:8px;
-        }
-      }
     }
 
     .bottom{
@@ -234,6 +217,7 @@ export default {
       }
     }
   }
+
   .item-bottom{
     padding:10px;
     background: #F2F0E7;
@@ -249,14 +233,12 @@ export default {
         font-size:12px;
       }
     }
-    
-    
-    
   }
+
   .finishBtn{
     position: absolute;
-    bottom:10px;
-    right:10px;
+    bottom:15px;
+    right:15px;
     min-width:unset;
     width:auto;
     height:34px;

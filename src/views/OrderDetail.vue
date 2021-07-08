@@ -3,6 +3,7 @@
 
     <Confirm ref="confirm"/>
     <PostMessage ref="postMessage" />
+    <AddPayment ref="addPayment" />
 
     <div class="head">
       <v-btn icon @click="$router.go(-1)">
@@ -16,7 +17,6 @@
     <div class="map"></div>
 
     <div class="order-btns">
-
       <v-btn text 
         @click="modalHandle($refs.confirm, true, '주문취소', '주문 취소할까요?')"
       >
@@ -35,7 +35,12 @@
         <label>사용자알림</label>
         <v-icon>mdi-arrow-right</v-icon>
       </v-btn>
-
+      <v-btn text
+        @click="()=>this.$refs.addPayment.handle(true)"
+      >
+        <label>추가결제요청</label>
+        <v-icon>mdi-arrow-right</v-icon>
+      </v-btn>
     </div>
 
     <div class="order-info">
@@ -109,8 +114,32 @@
       </dl>
     </div>
 
+    <div class="info-box product check-product">
+      <h4>검수완료 목록</h4>
+      <ul>
+        <li>
+          <span class="name"
+            >이불커버/침대커버(홀겹) <label>(6,900)</label></span
+          >
+          <span class="amount">8</span>
+          <span class="price">55,200 원</span>
+        </li>
+        <li>
+          <span class="name">베게커버 <label>(6,900)</label></span>
+          <span class="amount">8</span>
+          <span class="price">55,200 원</span>
+        </li>
+      </ul>
+      <dl>
+        <dt>합계</dt>
+        <dd>79,900 원</dd>
+      </dl>
+    </div>
+
+    
+
     <div class="next-btn" v-ripple>
-      <label>수거완료</label>
+      <label>세탁시작</label>
       <span>
         <v-icon> mdi-arrow-right-circle </v-icon>
       </span>
@@ -123,10 +152,11 @@
 <script>
 import Confirm from '@/components/modal/confirm.vue'
 import PostMessage from '@/components/modal/postMessage.vue'
+import AddPayment from '@/components/modal/addPayment.vue'
 
 export default {
   components:{
-    Confirm, PostMessage
+    Confirm, PostMessage, AddPayment
   },
   data() {
     return {
@@ -221,16 +251,17 @@ export default {
   margin-bottom:20px;
   background:#fff;
   border-top:1px solid #c2c2c2;
-  border-bottom:1px solid #c2c2c2;
+  flex-wrap: wrap;
 
   .v-btn {
     display: flex;
     justify-content: space-between;
-    flex: 1;
+    width:50%;
     border-radius: 0px;
     padding: 0px 10px;
     height: 44px;
     border-right: 1px solid #c2c2c2;
+    border-bottom:1px solid #c2c2c2;
 
     label {
       font-size: 12px;

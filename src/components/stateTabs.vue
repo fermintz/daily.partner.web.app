@@ -20,24 +20,24 @@ export default {
       stateTabActive: 0,
       stateTabs: [
         {
-          name:"주문예약<div style='font-size:9px;color:#888;'>(금일제외)</div>",
+          name:"검수대기",
           number: 9,
         },
         {
-          name: "수거요청",
+          name:"세탁대기",
+          number: 9,
+        },
+        {
+          name: "결제대기",
           number: 2,
         },
         {
-          name: "세탁입고",
+          name: "세탁중",
           number: 6,
         },
         {
-          name: "세탁출고",
+          name: "출고대기",
           number: 5,
-        },
-        {
-          name: "배송대기",
-          number: 1,
         },
       ],
     };
@@ -64,22 +64,6 @@ export default {
   border-bottom: 1px solid #e2e2e2;
   background:#fff;
   z-index:3;
-
-  dl:first-child {
-    flex: auto;
-    width: 50px;
-    align-items: flex-start;
-    padding:8px;
-
-    dt{
-      text-align:left;      
-    }
-    dd {
-      position:absolute;
-      right:12px;bottom:5px;
-      align-self: flex-end;
-    }
-  }
 
   dl.active {
     background:#FFF8FB;

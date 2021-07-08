@@ -35,11 +35,6 @@
             <span class="name">박수민</span>
             <span class="address">부산광역시 금정구 부산대학로 63번길 2 과학기술연구동 201호</span>
             <span class="phone">010-8525-4561</span>
-            <span class="gate">*누르고 4512 누루고 종모양 눌러주세요!</span>
-          </div>
-          <div class="btns">
-            <v-btn text>주소복사</v-btn>
-            <v-btn text>네비안내</v-btn>
           </div>
         </div>
       </div>

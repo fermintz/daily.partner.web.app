@@ -5,39 +5,23 @@
     hide-overlay
     transition="dialog-bottom-transition"
   >
-    <div class="postMessage">
+    <div class="addPayment">
       <div class="inner">
         <div class="head">
-          <h3>메시지안내</h3>
+          <h3>추가결제 요청</h3>
           <v-btn icon @click="visible = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </div>
 
         <div class="cont">
-          <dl>
-            <dt>안내사항 선택</dt>
+          <dl class="priceIn">
+            <dt>추가 요청금액 입력</dt>
             <dd>
-              <div class="select">
-                <div 
-                  class="select-item" 
-                  v-for="(item, index) in selectData" 
-                  :key="index"
-                  :class="{active: selectActive === index}"
-                  @click="selectActive = index"
-                  v-ripple
-                >
-                  <strong>
-                    {{item.title}}
-                  </strong>
-                  <span>
-                    {{item.description}}
-                  </span>
-                </div>
-              </div>
+              <input type="text">
             </dd>
           </dl>
-          <dl>
+          <dl class="textIn">
             <dt>추가안내사항</dt>
             <dd>
               <textarea placeholder="추가안내사항은 직접 입력할 수 있습니다"/>
@@ -86,7 +70,7 @@
 
         <div class="btns">
           <v-btn text>취소</v-btn>
-          <v-btn text class="finish">메세지 보내기</v-btn>
+          <v-btn text class="finish">추가결제 요청하기</v-btn>
         </div>
       </div>
     </div>
@@ -121,8 +105,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.postMessage{
-  height:100%;
+.addPayment{
+  min-height:100%;
   background:#fff;
 
   .inner{
@@ -145,12 +129,6 @@ export default {
   }
 
   .cont{
-    textarea{
-      border:1px solid #e2e2e2;
-      width:100%;
-      padding:5px;
-      min-height:70px;
-    }
 
     dl{
       margin-bottom:30px;
@@ -162,27 +140,41 @@ export default {
       }
     }
 
-    .select{
-      .select-item{
-        margin-bottom:10px;
-        padding:15px;
-        background:#f2f2f2;
-        strong{
-          font-size:14px;
-          display:block;
-          margin-bottom:5px;
+    .priceIn{
+      position: relative;
+
+      dd{
+        display:flex;
+        align-items: center;
+        input{
+          position: relative;
+          width:100%;
+          height:40px;
+          border-bottom:1px solid #e2e2e2;
+          outline: none;
         }
-        span{
-          display:block;
-          color:#888;
+        input:focus{
+          border-bottom:1px solid #008BE8;
         }
       }
-      .select-item.active{
-        border:1px solid #d22828;
-        background:#fff;
-        strong{color:#d22828;}
-        span{color:#000;}
+     
+      dd:after{
+        content:'원';
+        position:absolute;
+        right:0px;
+      }
+    }
 
+    .textIn{
+      textarea{
+        border:1px solid #e2e2e2;
+        width:100%;
+        padding:5px;
+        min-height:120px;
+        outline: none;;
+      }
+      textarea:focus{
+        border:1px solid #008BE8
       }
     }
 

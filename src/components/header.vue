@@ -2,12 +2,9 @@
   <div class="header">
     <div class="logo">
       <strong>데일리세탁</strong>
-      <span>Rider</span>
+      <span>Partner</span>
     </div>
     <div class="btns">
-      <v-btn icon @click="$router.push('mapView')">
-        <v-icon>mdi-map-marker</v-icon>
-      </v-btn>
       <v-btn icon @click="$router.push('searchView')">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -22,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   height:56px;
-  background:#008BE8;
+  background:#292929;
   padding:0 10px;
 
   .logo{
