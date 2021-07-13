@@ -10,36 +10,40 @@
       </div>
     </div>
     <div class="item-body">
-      <div class="top">
-        <div class="product-info">
-          <dl class="box">
-            <dt>11</dt>
-            <dd>주문상품</dd>
-          </dl>
-        </div>
-        <div class="user-info">
-          <dl class="name">
-            <dd>박수민</dd>
-          </dl>
-          <dl class="phone">
-            <dt><v-icon>mdi-phone</v-icon></dt>
-            <dd>010-8525-4561</dd>
-          </dl>
-          <dl class="address">
-            <dt><v-icon>mdi-map-marker</v-icon></dt>
-            <dd>부산광역시 금정구 부산대학로 63번길 2 과학기술연구동 201호</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="bottom">
-        <dl>
-          <dt>주문금액</dt>
-          <dd>15,900원</dd>
+
+      <div class="product-info">
+        <dl class="box">
+          <dt>11</dt>
+          <dd>주문상품</dd>
         </dl>
       </div>
-      <v-btn class="finishBtn" text @click.stop="modal(true)">
-        검수시작
-      </v-btn>
+      <div class="user-info">
+        <dl class="phone">
+          <dt>4561</dt>
+          <dd>010-8525-4561</dd>
+        </dl>
+        <dl class="date">
+          <dt>입고</dt>
+          <dd>2021.01.26 13:34</dd>
+        </dl>
+        <dl class="name">
+          <dt>이름</dt>
+          <dd>김아무개</dd>
+        </dl>
+        <dl class="price">
+          <dt>금액</dt>
+          <dd>105,900 원</dd>
+        </dl>
+      </div>
+      <div class="item-btns">
+        <v-btn text @click.stop="modal(true)">
+          전화걸기
+        </v-btn>
+        <v-btn class="finishBtn" text @click.stop="modal(true)">
+          검수시작
+        </v-btn>
+      </div>
+ 
     </div>
     <div class="item-bottom">
       <dl>
@@ -109,114 +113,99 @@ export default {
   .item-body{
     position: relative;
     padding:15px;
-    min-height:150px;
-
-    .top{
+    display:flex;
+    
+ 
+    .product-info{
       display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right:30px;
 
-      .product-info{
+      dl{
         display:flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-right:20px;
+        justify-content: center;
+        align-items: center;
 
-        dl{
+
+        dt{
           display:flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
-
-
-          dt{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            border-radius:100px;
-            width:50px;
-            height:50px;
-            background:#f2f2f2;
-            font-size:18px;
-            font-weight:600;
-            color:#008BE8;
-            line-height:16px;
-          }
-
-          dd{font-size:10px;margin-top:5px;}
-          
+          border-radius:100px;
+          width:60px;
+          height:60px;
+          background:#f2f2f2;
+          font-size:24px;
+          font-weight:600;
+          color:#292929;
+          line-height:16px;
         }
 
-        span{font-size:11px;margin-top:5px;color:#008BE8;text-align:center;width:100%;}
+        dd{font-size:10px;margin-top:5px;}
+        
       }
 
-      .user-info{
-        flex:1;
-
-        dl{
-          display:flex;
-          align-items: center;
-          margin-bottom:5px;
-
-          dt{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            margin-right:5px;
-            .v-icon{
-              font-size:11px;
-            }
-          }
-          dd{
-            font-size:12px;
-            line-height:18px;
-          }
-        }
-        dl.name{
-          dd{
-            font-size:14px;
-          }
-        }
-
-        dl.phone{
-          dt{
-            .v-icon{color:#08B882}
-          }
-          dd{background:#E3F9F2;color:#08B882;padding:0 5px;border-radius:3px;}
-        }
-
-        dl.address{
-          align-items:flex-start;
-          dt{
-            .v-icon{margin-top:3px;}
-          }
-        }
-      }
+      span{font-size:11px;margin-top:5px;color:#008BE8;text-align:center;width:100%;}
     }
 
-    .bottom{
-      display:flex;
-      margin-top:15px;
+    .user-info{
+      flex:1;
+
+      dl.phone{
+        align-items: flex-end;
+        margin-bottom:10px;
+        dt{font-size:24px;line-height:24px;color:#08B882}
+      }
 
       dl{
         display:flex;
         align-items: center;
-        justify-content: center;
-        margin-right:5px;
-        background: #F8E8EF;
-        height:22px;
-        padding:0 5px;
-        border-radius:3px;
+        margin-bottom:5px;
 
         dt{
-          font-size:11px;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          margin-right:5px;
+          font-size:12px;
           color:#888;
-          margin-right:3px;
         }
         dd{
-          font-size:11px;
+          font-size:12px;
+          color:#292929;
         }
+      }
+      dl:last-child{
+        margin-bottom:0px;
+      }
+    }
+
+    .item-btns{
+      display:flex;
+      flex-direction:column;
+      width:70px;
+      .v-btn{
+        width:100%;
+        margin-bottom:10px;
+        max-height:30px;
+        padding:0 15px;
+        font-size:12px;
+        font-weight:500;
+        letter-spacing: 0px;
+        background: #08B882;
+        color:#fff;
+      }
+
+      .finishBtn{
+        min-height:50px;
+        background: #292929;
+        color:#fff;
       }
     }
   }
+
 
   .item-bottom{
     padding:10px;
@@ -235,19 +224,6 @@ export default {
     }
   }
 
-  .finishBtn{
-    position: absolute;
-    bottom:15px;
-    right:15px;
-    min-width:unset;
-    width:auto;
-    height:34px;
-    padding:0 15px;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing: 0px;
-    background: #292929;
-    color:#fff;
-  }
+  
 }
 </style>
