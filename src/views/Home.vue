@@ -7,8 +7,17 @@
     <Progress />
     <Header />
     <StateTabs @status="tabIndex = $event" />
+
+    <div class="no-data">
+     
+        없어용
+      
+    </div>
     
     <div class="list">
+
+      
+
       <OrderCard
         v-for="item in 2"
         :key="item"
@@ -62,5 +71,20 @@ export default {
 .home {
   height: 100%;
   background: #f8f8f8;
+}
+
+.no-data{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width:100px;
+  height:100px;
+  background:#e2e2e2;
+  top:50%;
+  border-radius:100px;
+  left:50%;
+  margin-left:-50px;
+  margin-top:-50px;  
 }
 </style>

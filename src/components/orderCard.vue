@@ -39,6 +39,9 @@
         <v-btn text @click.stop="modal(true)">
           전화걸기
         </v-btn>
+        <v-btn text @click.stop="modal(true)">
+          추가결제
+        </v-btn>
         <v-btn class="finishBtn" text @click.stop="modal(true)">
           검수시작
         </v-btn>
@@ -186,9 +189,10 @@ export default {
       display:flex;
       flex-direction:column;
       width:70px;
+
       .v-btn{
         width:100%;
-        margin-bottom:10px;
+        margin-bottom:5px;
         max-height:30px;
         padding:0 15px;
         font-size:12px;
@@ -199,7 +203,6 @@ export default {
       }
 
       .finishBtn{
-        min-height:50px;
         background: #292929;
         color:#fff;
       }
