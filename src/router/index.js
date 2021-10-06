@@ -5,6 +5,11 @@ import OrderDetail from "../views/OrderDetail.vue";
 import HistoryView from "../views/History.vue";
 import SearchView from "../views/SearchView.vue";
 import MapView from "../views/MapView.vue";
+import CheckOrder from "../views/CheckOrder"
+import Product from '../views/Product'
+import FinishCheck from '../views/FinishCheck'
+import PostMessage from '../views/PostMessage'
+import Calculate from '../views/Calculate'
 
 Vue.use(VueRouter);
 
@@ -34,6 +39,32 @@ const routes = [
     name: "mapView",
     component: MapView,
   },
+  {
+    path: "/checkOrder",
+    name: "checkOrder",
+    component: CheckOrder,
+  },
+  {
+    path: "/product",
+    name: "product",
+    component: Product,
+  },
+  {
+    path: "/finishCheck",
+    name: "finishCheck",
+    component: FinishCheck,
+  },
+  {
+    path: "/postMessage",
+    name: "postMessage",
+    component: PostMessage,
+  },
+  {
+    path: "/calculate",
+    name: "calculate",
+    component: Calculate,
+  },
+  
 ];
 
 const router = new VueRouter({

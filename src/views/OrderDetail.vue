@@ -1,165 +1,178 @@
 <template>
   <div class="orderDetail">
-
-    <Confirm ref="confirm"/>
-    <PostMessage ref="postMessage" />
-    <AddPayment ref="addPayment" />
-
-    <div class="head">
+    <div class="header">
       <v-btn icon @click="$router.go(-1)">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
-      <v-btn icon @click="$router.push('historyView')">
-        <v-icon>mdi-history</v-icon>
-      </v-btn>
+      <h2>12346 상세보기</h2>
     </div>
 
-    <div class="map"></div>
+    <div class="page_top">
+      <div class="pickup_date">
+        <span>입고날짜</span>
+        <strong>2021.09.13 13:34</strong>
+      </div>
 
-    <div class="order-btns">
-      <v-btn text 
-        @click="modalHandle($refs.confirm, true, '주문취소', '주문 취소할까요?')"
-      >
-        <label>주문취소</label>
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
-      <v-btn text
-        @click="modalHandle($refs.confirm, true, '패널티취소', '주문취소 후 패널티(3,000원)를 부과할까요?')"
-      >
-        <label>패널티취소</label>
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
-      <v-btn text
-        @click="()=>this.$refs.postMessage.handle(true)"
-      >
-        <label>사용자알림</label>
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
-      <v-btn text
-        @click="()=>this.$refs.addPayment.handle(true)"
-      >
-        <label>추가결제요청</label>
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
+      <div class="user_number">
+        <span>사용자번호</span>
+        <strong>48164</strong>
+      </div>
+
+      <div class="history">
+        <span>검수대기</span>
+        <span>검토중</span>
+        <span class="active">검토완료</span>
+        <span>작업중</span>
+        <span>작업완료</span>
+      </div>      
     </div>
 
-    <div class="order-info">
-      <dl>
-        <dt>주문일시</dt>
+    <div class="line_bar" />
+
+    <div class="page_cont">
+      <dl class="user_message">
+        <dt>고객 요청사항</dt>
         <dd>
-          <span>21.06.20</span>
-          <span>오후 06:55</span>
+          <p>빠른 배송 부탁드립니다.</p>
         </dd>
       </dl>
-      <dl>
-        <dt>수거희망일</dt>
+
+      <div class="divider" />
+
+      <dl class="admin_message">
+        <dt>본사 작업안내</dt>
         <dd>
-          <span>21.06.21</span>
-          <span>월요일</span>
+          <span>21.09.12</span>
+          <strong>
+            오염이 심한 와이셔츠는 1개 취소. 나머지 상품만 작업시작
+          </strong>
         </dd>
       </dl>
-      <dl>
-        <dt>수거요청시간</dt>
+  
+      <div class="divider" />
+
+      <dl class="user_product">
+        <dt>검수 완료 후 변동내역</dt>
         <dd>
-          <span>오전</span>
-          <span>08:00~12:00</span>
+          <div class="item check">
+            <div class="left">
+              <label>와이셔츠</label>
+              <div class="price">
+                <span>4,000원</span>
+                <strong>3,000원</strong>
+              </div>
+            </div>
+            <div class="amount">
+              2
+            </div>
+            <div class="total">
+              8,000 원
+            </div>
+          </div> <!-- item -->
+          <div class="item">
+            <div class="left">
+              <label>정장하의</label>
+              <div class="price">
+                <span>4,000원</span>
+                <strong>3,000원</strong>
+              </div>
+            </div>
+            <div class="amount">
+              3
+            </div>
+            <div class="total">
+              12,000 원
+            </div>
+          </div>
+        </dd>
+      </dl>
+
+      <div class="divider"/>
+
+      <dl class="user_product">
+        <dt>고객 주문내역</dt>
+        <dd>
+          <div class="item">
+            <div class="left">
+              <label>와이셔츠</label>
+              <div class="price">
+                <span>4,000원</span>
+                <strong>3,000원</strong>
+              </div>
+            </div>
+            <div class="amount">
+              3
+            </div>
+            <div class="total">
+              12,000 원
+            </div>
+          </div>
+          <div class="item">
+            <div class="left">
+              <label>정장하의</label>
+              <div class="price">
+                <span>4,000원</span>
+                <strong>3,000원</strong>
+              </div>
+            </div>
+            <div class="amount">
+              3
+            </div>
+            <div class="total">
+              12,000 원
+            </div>
+          </div>
+        </dd>
+      </dl>
+
+      <div class="divider" />
+
+      <dl class="add_work">
+        <dt>추가작업 결제 요청내역</dt>
+        <dd class="cont">
+          <div class="price">
+            <span>요청금액</span>
+            <strong>5,000 원</strong>
+          </div>
+          <div class="post">
+            <strong>맡기신 와이셔츠의 오염도정도가 심해 
+추가세탁이 필요합니다. 사진 참고부탁드립니다</strong>
+          </div>
+        </dd>
+        <dd class="photos">
+          <div class="photo">
+            <img src="https://source.unsplash.com/random" />
+          </div>
+          <div class="photo">
+            <img src="https://source.unsplash.com/random" />
+          </div>
+          <div class="photo">
+            <img src="https://source.unsplash.com/random" />
+          </div>
         </dd>
       </dl>
     </div>
 
-    <div class="info-box user-info">
-      <h4>주문자정보</h4>
-      <dl>
-        <dt>사용자명</dt>
-        <dd>박수민</dd>
-      </dl>
-      <dl>
-        <dt>전화번호</dt>
-        <dd>010-8525-4561</dd>
-      </dl>
-      <dl>
-        <dt>주소지</dt>
-        <dd>부산광역시 금정구 부산대학로 63번길 2 과학기술연구동 201호</dd>
-      </dl>
-      <dl>
-        <dt>출입문</dt>
-        <dd>별 누루고 3451 마지막 종 눌러주세요</dd>
-      </dl>
+    <div class="page_bottom">
+      <div class="btns">
+        <v-btn text class="finish">
+          <label>세탁시작</label>
+          <v-icon> mdi-arrow-right-circle </v-icon>
+        </v-btn>
+      </div>
     </div>
-
-    <div class="info-box user-message">
-      <h4>고객 요청사항</h4>
-      <p>빠른 배송 부탁드립니다.</p>
-    </div>
-
-    <div class="info-box product">
-      <h4>주문목록</h4>
-      <ul>
-        <li>
-          <span class="name"
-            >이불커버/침대커버(홀겹) <label>(6,900)</label></span
-          >
-          <span class="amount">8</span>
-          <span class="price">55,200 원</span>
-        </li>
-        <li>
-          <span class="name">베게커버 <label>(6,900)</label></span>
-          <span class="amount">8</span>
-          <span class="price">55,200 원</span>
-        </li>
-      </ul>
-      <dl>
-        <dt>합계</dt>
-        <dd>79,900 원</dd>
-      </dl>
-    </div>
-
-    <div class="info-box product check-product">
-      <h4>검수완료 목록</h4>
-      <ul>
-        <li>
-          <span class="name"
-            >이불커버/침대커버(홀겹) <label>(6,900)</label></span
-          >
-          <span class="amount">8</span>
-          <span class="price">55,200 원</span>
-        </li>
-        <li>
-          <span class="name">베게커버 <label>(6,900)</label></span>
-          <span class="amount">8</span>
-          <span class="price">55,200 원</span>
-        </li>
-      </ul>
-      <dl>
-        <dt>합계</dt>
-        <dd>79,900 원</dd>
-      </dl>
-    </div>
-
-    
-
-    <div class="next-btn" v-ripple>
-      <label>세탁시작</label>
-      <span>
-        <v-icon> mdi-arrow-right-circle </v-icon>
-      </span>
-    </div>
-
-    
+   
   </div>
 </template>
 
 <script>
-import Confirm from '@/components/modal/confirm.vue'
-import PostMessage from '@/components/modal/postMessage.vue'
-import AddPayment from '@/components/modal/addPayment.vue'
+
 
 export default {
-  components:{
-    Confirm, PostMessage, AddPayment
-  },
   data() {
     return {
+      tabActive:0,
+
       photos: [
         {
           src: "https://source.unsplash.com/random",
@@ -186,226 +199,359 @@ export default {
 <style lang="scss" scoped>
 .orderDetail {
   position: relative;
-  height: 100%;
-  background: #f8f8f8;
+  padding-bottom:90px;
 
-  .head{
+  .header{
+    position: sticky;
     width:100%;
-    left:0px;
     top:0px;
-    position: absolute;
     display:flex;
-    justify-content: space-between;
     align-items: center;
     height:60px;
     padding:0 10px;
+    background:#fff;
+    z-index:3;
 
     .v-btn{
-      width: 40px;
-      height: 40px;
-      background: rgba(0, 0, 0, 0.4);
-      color: #fff;
+      width:40px;
+      height:40px;
+    }
+    h2{
+      font-size:16px;
+      margin-left:5px;
     }
   }
-}
 
-
-
-
-.map {
-  height: 240px;
-  background: #e2e2e2;
-}
-
-.order-info {
-  display: flex;
-  align-items: center;
-  height: 90px;
-  background: #fff;
-  border-bottom: 1px solid #e2e2e2;
-  border-top: 1px solid #e2e2e2;
-
-  dl {
-    flex: 1;
-    padding: 0 15px;
-    border-right: 1px solid #e2e2e2;
-
-    dt {
-      font-size: 10px;
-      color: #888;
-    }
-    dd {
-      margin-top: 5px;
-      span {
-        display: block;
-      }
-    }
-  }
-  dl:last-child {
-    border-right: 0px;
-  }
-}
-
-.order-btns {
-  display: flex;
-  margin-bottom:20px;
-  background:#fff;
-  border-top:1px solid #c2c2c2;
-  flex-wrap: wrap;
-
-  .v-btn {
-    display: flex;
-    justify-content: space-between;
-    width:50%;
-    border-radius: 0px;
-    padding: 0px 10px;
-    height: 44px;
-    border-right: 1px solid #c2c2c2;
-    border-bottom:1px solid #c2c2c2;
-
-    label {
-      font-size: 12px;
-      color: #292929;
-    }
-    .v-icon {
-      font-size: 16px;
-      color: #df0e68;
-    }
-  }
-  .v-btn:last-child {
-    border-right: 0px;
+  .line_bar{
+    height:15px;
+    background:#f2f2f2;
   }
 
-}
+  .page_top{
+    padding:20px;
+    padding-top:0px;
 
-.info-box {
-  border-bottom: 1px solid #e2e2e2;
-  padding: 15px;
-  background: #fff;
-
-  h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-}
-
-.user-info {
-  dl {
-    display: flex;
-    margin-bottom: 10px;
-    dt {
-      width: 70px;
-      color: #888;
-    }
-    dd {
-      flex: 1;
-    }
-  }
-}
-
-.user-message {
-  p {
-    padding: 10px;
-    background: #f8f6f1;
-  }
-}
-
-.product {
-  ul {
-    padding: 0px;
-    margin: 0px;
-
-    li {
-      display: flex;
+    .user_number{
+      display:flex;
+      flex-direction: column;
       align-items: center;
-      margin-bottom: 8px;
-
-      span.name {
-        text-align: left;
-        flex: 1;
-
-        label {
-          font-size: 10px;
-          color: #888;
-        }
+      margin-bottom:30px;
+      span{
+        font-size:14px;
+        color:#008BE8;
+        margin-bottom:4px;
       }
-      span.amount {
-        width: 40px;
-        text-align: center;
-      }
-      span.price {
-        width: 70px;
-        text-align: right;
+      strong{
+        font-size:36px;
+        line-height:1;
+        font-weight:600;
+        
       }
     }
 
-    li.change {
-      color: #df0e68;
+    .pickup_date{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom:20px;
+
+      span{
+        margin-right:8px;
+        color:#898989;
+      }
+      strong{
+        font-weight:normal;
+      }
     }
-  }
-  dl {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #e2e2e2;
-    margin-top: 15px;
-    padding-top: 15px;
 
-    dt {
-      background: #595959;
-      color: #fff;
-      font-size: 10px;
-      padding: 0 5px;
-      border-radius: 3px;
+    .history{
+      display:flex;
+      align-items: center;
+      background:#f2f2f2;
+      border-radius:5px;
+      overflow: hidden;
+
+      span{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex:1;
+        margin-right:10px;
+        height:40px;
+        font-size:12px;
+        color:#898989;
+      }
+      span.active{
+        color:#fff;
+        background:#008BE8;
+        font-weight:bold;
+      }
+      span:last-child{
+        margin-right:0px;
+      }
     }
-  }
-}
 
-.check-product {
-  background: #fff6fa;
-  dl {
-    dt {
-      background: #f11064;
-    }
-  }
-}
-
-.photo-info {
-  p.no-data {
-    background: #f8f8f8;
-    padding: 10px;
-  }
-
-  .v-carousel{
-    border-radius:5px;
-    overflow:hidden;
-  }
-
-  .photo {
-    position: relative;
-
-    img {
-      display:block;
-    }
     
   }
+
+  .page_tabs{
+    display:flex;
+    align-items: center;
+    background:#ffff;
+    border-top:1px solid #292929;
+    border-bottom:1px solid #e2e2e2;
+
+    .v-btn{
+      font-size:14px;
+      font-weight:bold;
+      flex:1;
+      height:50px;
+      border-radius:0px;
+    }
+    .v-btn.active{
+      color:#008be8;
+    }
+    .v-btn.active:after{
+      content:'';
+      position: absolute;
+      width:100%;
+      bottom:0;
+      height:2px;
+      background:#008be8;
+    }
+  }
+
+  .page_cont{
+    background:#fff;
+    padding:20px;
+
+    .divider{
+      height:1px;
+      background:#e2e2e2;
+      margin:30px 0;
+    }
+
+    dl{
+      dt{
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom:15px;
+      }
+    }
+
+    dl:last-child{
+      margin-bottom:0px;
+    }
+
+    dl.user_product{
+      dd{
+        .item{
+          display:flex;
+          align-items: center;
+          border:1px solid #e2e2e2;
+          padding:15px;
+          border-radius:5px;
+          margin-bottom:10px;
+
+          .left{
+            flex:1;
+            label{
+              display:block;
+              font-size:14px;
+            }
+            .price{
+              display:flex;
+              align-items: center;
+              font-size:12px;
+              span{
+                text-decoration: line-through;
+                color:#999;
+              }
+              strong{
+                margin-left:5px;
+              }
+            }
+          }
+
+          .amount{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:18px;
+            width:30px;
+            height:30px;
+            font-size:12px;
+            background:#f2f2f2;
+          }
+          .total{
+            width:90px;
+            text-align:right;
+          }
+        }
+
+        .item.check{
+          background:#FBEFF4;
+          border:0px;
+          .amount{
+            color:#f11064;
+            background:#fff;
+          }
+          .total{
+            color:#f11064;
+          }
+        }
+
+        .price_total{
+          background:#f2f2f2;
+          border-radius:5px;
+          padding:15px;
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          span{font-size:12px;}
+          strong{font-weight:bold;}
+        }  
+      }
+    }
+
+
+    .user_message {
+      p {
+        padding: 15px;
+        background: #f8f6f1;
+        margin-bottom:5px;
+        border-radius:5px;
+      }
+    }
+
+    .admin_message{
+      dd{
+        border:1px solid #16AF80;
+        padding:15px;
+        border-radius:5px;
+
+        span{
+          display:block;
+          color:#898989;
+        }
+        strong{
+          display:block;
+          font-size:14px;
+          margin-top:5px;
+        }
+      }
+    }
+
+    .add_work{
+      
+      .cont{
+        
+        .price{
+          display:flex;
+          align-items: center;
+          
+          span{
+            width:70px;
+            color:#898989;
+          }
+          strong{
+            font-size:14px;
+            flex:1;
+          }
+        }
+
+        .post{
+          display:flex;
+          margin-top:10px;
+          background:#f2f2f2;
+          padding:15px;
+          border-radius:5px;
+
+          strong{
+            font-size:14px;
+            flex:1;
+            font-weight:normal;
+          }
+        }
+      }
+      
+      
+      .photos{
+        display:flex;
+        flex-wrap: wrap;
+        margin-top:30px;
+
+        .photo{
+          width:25%;
+          margin-right:10px;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow:hidden;
+          border-radius:5px;
+          border:1px solid #e2e2e2;
+
+          img{
+            position:absolute;
+            width:150%;
+          }
+        }
+        .photo:after{
+          content:'';
+          display:block;
+          padding-bottom:100%;
+        }
+
+        .photo:nth-child(4n){
+          margin-right:0px;
+        }
+      }
+    }
+  }
+
+  .page_bottom{
+    width:100%;
+    border-top:1px solid #e2e2e2;
+    position: fixed;
+    bottom:0px;
+    padding:10px;
+    background:#fff;
+
+    .btns{
+      display:flex;
+      align-items: center;
+
+      .v-btn{
+        flex:1;
+        height:50px;
+        border:1px solid #c2c2c2;
+        margin-right:10px;
+        font-size:14px;
+        font-weight:bold;
+
+        .v-icon{
+          margin-left:5px;
+          font-size:18px;
+        }
+      }
+
+      .v-btn.finish{
+        background:#008be8;
+        color:#fff;
+        border:0px;
+      }
+
+      .v-btn:last-child{
+        margin-right:0px;
+      }
+    }
+  }
 }
 
-.next-btn {
-  margin-top: 20px;
-  height: 56px;
-  padding: 0 15px;
-  display: flex;
-  background: #008be8;
-  justify-content: center;
-  align-items: center;
-  label {
-    color: #fff;
-    font-size: 16px;
-  }
-  .v-icon {
-    margin-left: 10px;
-    color: #fff;
-  }
-}
+
+
+
+
+
 </style>

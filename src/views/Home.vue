@@ -6,31 +6,39 @@
     <PhotoSetModal ref="photoSet" />
     <Progress />
     <Header />
-    <StateTabs @status="tabIndex = $event" />
-
-    <div class="no-data">
-     
-        없어용
-      
-    </div>
     
-    <div class="list">
+    <div class="stateTabs">
+      <dl
+        v-for="(item, index) in stateTabs"
+        :key="index"
+        :class="{ active: stateTabActive === index }"
+        @click="stateTabActive = index"
+      >
+        <dt v-html="item.name"></dt>
+        <dd>{{item.number}}</dd>
+      </dl>
+    </div>
 
-      
-
-      <OrderCard
-        v-for="item in 2"
-        :key="item"
-        @modal="modalHandle($event)"
-        @snack="snackHandle($event)"
-      />
+    <div class="state_list" v-show="stateTabActive === 0">
+      <OrderCard state="검수대기" next="검수" csMessage="false"/>
+    </div>
+    <div class="state_list" v-show="stateTabActive === 1">
+      <OrderCard :btns="true" :csMessage="true" state="검토중"/>
+    </div>
+    <div class="state_list" v-show="stateTabActive === 2">
+      <OrderCard state="검토완료" next="작업시작"/>
+    </div>
+    <div class="state_list" v-show="stateTabActive === 3">
+      <OrderCard next="작업완료" state="작업중"/>
+    </div>
+    <div class="state_list" v-show="stateTabActive === 4">
+      <OrderCard :btns="true" state="작업완료" :csMessage="true"/>
     </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/header.vue";
-import StateTabs from "@/components/stateTabs.vue";
 import OrderCard from "@/components/orderCard.vue";
 import Confirm from "@/components/modal/confirm.vue";
 import PhotoSetModal from "@/components/modal/photo.vue";
@@ -41,7 +49,6 @@ import Checking from '@/components/modal/checking.vue'
 export default {
   components: {
     Header,
-    StateTabs,
     OrderCard,
     Confirm,
     PhotoSetModal,
@@ -51,7 +58,29 @@ export default {
   },
   data() {
     return {
-      tabIndex: 0,
+      stateTabActive: 0,
+      stateTabs: [
+        {
+          name:"검수대기",
+          number: 2,
+        },
+        {
+          name:"검토중",
+          number: 1,
+        },
+        {
+          name:"검토완료",
+          number: 2,
+        },
+        {
+          name: "작업중",
+          number: 4,
+        },
+        {
+          name: "작업완료",
+          number: 10,
+        },
+      ],
     };
   },
   mounted() {},
@@ -71,20 +100,60 @@ export default {
 .home {
   height: 100%;
   background: #f8f8f8;
+
+  .stateTabs {
+    position:sticky;
+    top:0px;
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+    background:#fff;
+    z-index:3;
+
+    dl.active {
+      background:#FFF8FB;
+      dd {
+        color: #df0e68;
+      }
+    }
+
+    dl.active:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #df0e68;
+    }
+
+    dl {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      border-right: 1px solid #e2e2e2;
+      height: 64px;
+      margin: 0px;
+      padding: 8px;
+
+      dt {
+        font-size: 11px;
+        text-align: center;
+      }
+      dd {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+    }
+  }
 }
 
 .no-data{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width:100px;
-  height:100px;
-  background:#e2e2e2;
-  top:50%;
-  border-radius:100px;
-  left:50%;
-  margin-left:-50px;
-  margin-top:-50px;  
+  padding:20px;
+  text-align:center
 }
 </style>

@@ -5,7 +5,10 @@
       <span>Partner</span>
     </div>
     <div class="btns">
-      <v-btn icon @click="$router.push('searchView')">
+      <v-btn text @click="$router.push('calculate')">
+        <v-icon>mdi-chart-bar</v-icon>
+      </v-btn>
+      <v-btn text @click="$router.push('searchView')">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
     </div>
@@ -24,6 +27,7 @@
 
   .logo{
     color:#fff;
+
     strong{
       font-size:20px;
       letter-spacing:-0.7px;
@@ -32,13 +36,15 @@
   }
 
   .btns{
+  
     .v-btn{
-      height:40px;
-      width:40px;
+      height:46px;
+      min-width:46px;
       padding:0px;
-      margin-left:5px;
+      border-radius:5px;
 
       .v-icon{
+        font-size:20px;
         color:#fff;
       }
     }

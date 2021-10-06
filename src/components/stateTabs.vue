@@ -21,23 +21,23 @@ export default {
       stateTabs: [
         {
           name:"검수대기",
-          number: 9,
-        },
-        {
-          name:"세탁대기",
-          number: 9,
-        },
-        {
-          name: "결제대기",
           number: 2,
         },
         {
-          name: "세탁중",
-          number: 6,
+          name:"검토중",
+          number: 1,
         },
         {
-          name: "출고대기",
-          number: 5,
+          name:"검토완료",
+          number: 2,
+        },
+        {
+          name: "작업중",
+          number: 4,
+        },
+        {
+          name: "작업완료",
+          number: 10,
         },
       ],
     };
@@ -106,6 +106,5 @@ export default {
     }
   }
 }
-
 
 </style>
