@@ -42,10 +42,35 @@
       <dl class="admin_message">
         <dt>본사 작업안내</dt>
         <dd>
-          <span>21.09.12</span>
+          <span>21.09.12 13:45</span>
           <strong>
             오염이 심한 와이셔츠는 1개 취소. 나머지 상품만 작업시작
           </strong>
+        </dd>
+
+        <dd class="photos">
+          <v-row>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+          </v-row>
         </dd>
       </dl>
   
@@ -140,15 +165,28 @@
           </div>
         </dd>
         <dd class="photos">
-          <div class="photo">
-            <img src="https://source.unsplash.com/random" />
-          </div>
-          <div class="photo">
-            <img src="https://source.unsplash.com/random" />
-          </div>
-          <div class="photo">
-            <img src="https://source.unsplash.com/random" />
-          </div>
+          <v-row>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+            <v-col cols="4"> 
+              <div class="photo">
+                <img src="https://source.unsplash.com/random" />
+              </div>
+            </v-col>
+          </v-row>
         </dd>
       </dl>
     </div>
@@ -331,6 +369,43 @@ export default {
       margin:30px 0;
     }
 
+    .photos{
+      display:flex;
+      flex-wrap: wrap;
+      margin-top:20px;
+
+      .row{
+        margin:-5px
+      }
+      .col{
+        padding:5px;
+      }
+
+      .photo{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow:hidden;
+        border-radius:10px;
+        border:1px solid #e2e2e2;
+
+        img{
+          position:absolute;
+          width:150%;
+        }
+      }
+      .photo:after{
+        content:'';
+        display:block;
+        padding-bottom:100%;
+      }
+
+      .photo:nth-child(3n){
+        margin-right:0px;
+      }
+    }
+
     dl{
       dt{
         font-size:16px;
@@ -440,6 +515,11 @@ export default {
           margin-top:5px;
         }
       }
+
+      dd.photos{
+        padding:0px;
+        border:0px;
+      }
     }
 
     .add_work{
@@ -472,39 +552,6 @@ export default {
             flex:1;
             font-weight:normal;
           }
-        }
-      }
-      
-      
-      .photos{
-        display:flex;
-        flex-wrap: wrap;
-        margin-top:30px;
-
-        .photo{
-          width:25%;
-          margin-right:10px;
-          display:flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          overflow:hidden;
-          border-radius:5px;
-          border:1px solid #e2e2e2;
-
-          img{
-            position:absolute;
-            width:150%;
-          }
-        }
-        .photo:after{
-          content:'';
-          display:block;
-          padding-bottom:100%;
-        }
-
-        .photo:nth-child(4n){
-          margin-right:0px;
         }
       }
     }

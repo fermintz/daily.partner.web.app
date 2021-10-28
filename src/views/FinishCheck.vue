@@ -16,36 +16,45 @@
               <div class="left">
                 <label>와이셔츠</label>
                 <div class="price">
-                  <span>4,000원</span>
                   <strong>3,000원</strong>
                 </div>
               </div>
               <div class="amount">
-                3
+                <span>1</span>
+                <v-icon>
+                  mdi-chevron-right
+                </v-icon>
+                <strong>2</strong>
               </div>
               <div class="total">
-                12,000 원
+                <span>12,000원</span>
+                <strong>24,000원</strong>
               </div>
             </div>
             <div class="item">
               <div class="left">
                 <label>정장하의</label>
                 <div class="price">
-                  <span>4,000원</span>
+
                   <strong>3,000원</strong>
                 </div>
               </div>
               <div class="amount">
-                3
+                <span>1</span>
+                <v-icon>
+                  mdi-chevron-right
+                </v-icon>
+                <strong>2</strong>
               </div>
               <div class="total">
-                12,000 원
+                <span>12,000원</span>
+                <strong>24,000원</strong>
               </div>
             </div>
           </dd>
         </dl>
 
-        <dl class="user_product check">
+        <!-- <dl class="user_product check">
           <dt>변동내역</dt>
           <dd>
             <div class="item">
@@ -62,9 +71,9 @@
               <div class="total">
                 8,000 원
               </div>
-            </div> <!-- item -->
+            </div> 
           </dd>
-        </dl>
+        </dl> -->
       </div> <!--inner -->
 
       <div class="line_bar" />
@@ -218,26 +227,46 @@
               span{
                 text-decoration: line-through;
                 color:#999;
+                margin-right:5px;
               }
-              strong{
-                margin-left:5px;
-              }
+
             }
           }
 
           .amount{
             display:flex;
-            justify-content: center;
             align-items: center;
             border-radius:18px;
-            width:30px;
             height:30px;
+            border-radius:15px;
             font-size:12px;
             background:#f2f2f2;
+            padding:0 10px;
+            
+            span{
+              
+            }
+
+            .v-icon{
+              font-size:18px;
+              margin:0 5px;
+            }
+          
+            strong{
+              color:#f11064
+            }
           }
           .total{
             width:90px;
             text-align:right;
+
+            span{
+              display:block;
+            }
+            strong{
+              display:block;
+              color:#f11064
+            }
           }
         }
 
