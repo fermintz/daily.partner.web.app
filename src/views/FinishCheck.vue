@@ -41,14 +41,9 @@
               </div>
               <div class="amount">
                 <span>1</span>
-                <v-icon>
-                  mdi-chevron-right
-                </v-icon>
-                <strong>2</strong>
               </div>
               <div class="total">
                 <span>12,000원</span>
-                <strong>24,000원</strong>
               </div>
             </div>
           </dd>
