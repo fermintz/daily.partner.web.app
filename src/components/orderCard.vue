@@ -120,7 +120,7 @@ export default {
           color:#898989;
         }
         dd{
-          font-size:16px;
+          font-size:20px;
           line-height:1;
           margin-top:2px;
           font-weight:bold;

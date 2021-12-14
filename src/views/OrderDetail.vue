@@ -8,16 +8,21 @@
     </div>
 
     <div class="page_top">
-      <div class="pickup_date">
-        <span>입고날짜</span>
-        <strong>2021.09.13 13:34</strong>
-      </div>
+      <div class="d-row">
+        <dl class="pickup_date">
+          <dt>입고일시</dt>
+          <dd>
+            <span>2021.09.13</span>
+            <span>13:34</span>
+          </dd>
+        </dl>
 
-      <div class="user_number">
-        <span>사용자번호</span>
-        <strong>48164</strong>
+        <dl class="order_number">
+          <dt>사용자번호</dt>
+          <dd>3IHH27-<strong>8D50</strong></dd>
+        </dl>
       </div>
-
+      
       <div class="history">
         <span>검수대기</span>
         <span>검토중</span>
@@ -30,165 +35,72 @@
     <div class="line_bar" />
 
     <div class="page_cont">
-      <dl class="user_message">
+      <dl class="message user">
         <dt>고객 요청사항</dt>
         <dd>
-          <p>빠른 배송 부탁드립니다.</p>
+          <div class="message_item">
+            <span>명품류 주의 요청(단추/와펜 등)<br><br>조심히 다루어 주세요</span>
+          </div>
         </dd>
       </dl>
 
-      <div class="divider" />
-
-      <dl class="admin_message">
+      <dl class="message admin">
         <dt>본사 작업안내</dt>
         <dd>
-          <span>21.09.12 13:45</span>
-          <strong>
-            오염이 심한 와이셔츠는 1개 취소. 나머지 상품만 작업시작
-          </strong>
+          <div class="message_item">
+            <strong>2021-12-10 14:13</strong>
+            <span>상품검증이 완료되었습니다 작업을 진행해주세요</span>
+          </div>
+          <div class="message_item">
+            <strong>2021-12-10 14:13</strong>
+            <span>상품검증이 완료되었습니다 작업을 진행해주세요</span>
+          </div>
         </dd>
+      </dl>
 
-        <dd class="photos">
-          <v-row>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-          </v-row>
+      <dl class="user_product accordion">
+        <dt v-ripple>
+          <label>사용자 주문내역</label>
+          <v-icon>mdi-chevron-down</v-icon>
+        </dt>
+        <dd>
+          <div class="item">
+            <label>와이셔츠</label>
+            <span>3</span>
+          </div>
+          <div class="item">
+            <label>와이셔츠</label>
+            <span>3</span>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="user_product accordion">
+        <dt v-ripple>
+          <label>검수된 물건내역</label>
+          <v-icon>mdi-chevron-down</v-icon>
+        </dt>
+        <dd>
+          <div class="item">
+            <label>와이셔츠</label>
+            <span>3</span>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="user_product accordion">
+        <dt v-ripple>
+          <label>본사최종 검수내역</label>
+          <v-icon>mdi-chevron-down</v-icon>
+        </dt>
+        <dd>
+          <div class="item">
+            <label>와이셔츠</label>
+            <span>3</span>
+          </div>
         </dd>
       </dl>
   
-      <div class="divider" />
-
-      <dl class="user_product">
-        <dt>검수 완료 후 변동내역</dt>
-        <dd>
-          <div class="item check">
-            <div class="left">
-              <label>와이셔츠</label>
-              <div class="price">
-                <span>4,000원</span>
-                <strong>3,000원</strong>
-              </div>
-            </div>
-            <div class="amount">
-              2
-            </div>
-            <div class="total">
-              8,000 원
-            </div>
-          </div> <!-- item -->
-          <div class="item">
-            <div class="left">
-              <label>정장하의</label>
-              <div class="price">
-                <span>4,000원</span>
-                <strong>3,000원</strong>
-              </div>
-            </div>
-            <div class="amount">
-              3
-            </div>
-            <div class="total">
-              12,000 원
-            </div>
-          </div>
-        </dd>
-      </dl>
-
-      <div class="divider"/>
-
-      <dl class="user_product">
-        <dt>고객 주문내역</dt>
-        <dd>
-          <div class="item">
-            <div class="left">
-              <label>와이셔츠</label>
-              <div class="price">
-                <span>4,000원</span>
-                <strong>3,000원</strong>
-              </div>
-            </div>
-            <div class="amount">
-              3
-            </div>
-            <div class="total">
-              12,000 원
-            </div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <label>정장하의</label>
-              <div class="price">
-                <span>4,000원</span>
-                <strong>3,000원</strong>
-              </div>
-            </div>
-            <div class="amount">
-              3
-            </div>
-            <div class="total">
-              12,000 원
-            </div>
-          </div>
-        </dd>
-      </dl>
-
-      <div class="divider" />
-
-      <dl class="add_work">
-        <dt>추가작업 결제 요청내역</dt>
-        <dd class="cont">
-          <div class="price">
-            <span>요청금액</span>
-            <strong>5,000 원</strong>
-          </div>
-          <div class="post">
-            <strong>맡기신 와이셔츠의 오염도정도가 심해 
-추가세탁이 필요합니다. 사진 참고부탁드립니다</strong>
-          </div>
-        </dd>
-        <dd class="photos">
-          <v-row>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-            <v-col cols="4"> 
-              <div class="photo">
-                <img src="https://source.unsplash.com/random" />
-              </div>
-            </v-col>
-          </v-row>
-        </dd>
-      </dl>
     </div>
 
     <div class="page_bottom">
@@ -267,150 +179,118 @@ export default {
 
   .page_top{
     padding:20px;
-    padding-top:0px;
 
-    .user_number{
+    .d-row{
       display:flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom:30px;
-      span{
-        font-size:14px;
-        color:#008BE8;
-        margin-bottom:4px;
+      margin-bottom:20px;
+
+      dl{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right:20px;
+        margin-right:20px;
+        border-right:1px solid #e2e2e2;
+        dt{
+          font-size:11px;
+          color:#898989;
+          margin-bottom:5px;
+        }
       }
-      strong{
-        font-size:36px;
-        line-height:1;
-        font-weight:600;
-        
+      dl:last-child{
+        border-right:0px;
       }
     }
 
     .pickup_date{
-      display:flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom:20px;
-
-      span{
-        margin-right:8px;
-        color:#898989;
-      }
-      strong{
-        font-weight:normal;
+      dd{
+        span{
+          display:block;
+          line-height:1.3;
+        }
       }
     }
+    .order_number{
+      dd{
+        font-size:28px;
+        line-height:1;
+        font-weight:500;
+        strong{
+          font-weight:500;
+          color:#f11064;
+        }
+      }
+    }
+
+    
 
     .history{
       display:flex;
       align-items: center;
-      background:#f2f2f2;
-      border-radius:5px;
+      border:1px solid #e2e2e2;
+      border-radius:4px;
       overflow: hidden;
+      height:40px;
 
       span{
         display:flex;
         justify-content: center;
         align-items: center;
         flex:1;
+        height:30px;
+        border-radius:4px;
         margin-right:10px;
-        height:40px;
-        font-size:12px;
+        font-size:11px;
         color:#898989;
       }
       span.active{
         color:#fff;
         background:#008BE8;
-        font-weight:bold;
       }
       span:last-child{
         margin-right:0px;
+        padding-right:5px;
+      }
+      span:first-child{
+        padding-left:5px;
       }
     }
 
     
   }
 
-  .page_tabs{
-    display:flex;
-    align-items: center;
-    background:#ffff;
-    border-top:1px solid #292929;
-    border-bottom:1px solid #e2e2e2;
 
-    .v-btn{
-      font-size:14px;
-      font-weight:bold;
-      flex:1;
-      height:50px;
-      border-radius:0px;
-    }
-    .v-btn.active{
-      color:#008be8;
-    }
-    .v-btn.active:after{
-      content:'';
-      position: absolute;
-      width:100%;
-      bottom:0;
-      height:2px;
-      background:#008be8;
-    }
-  }
 
   .page_cont{
     background:#fff;
-    padding:20px;
 
     .divider{
       height:1px;
       background:#e2e2e2;
       margin:30px 0;
     }
-
-    .photos{
-      display:flex;
-      flex-wrap: wrap;
-      margin-top:20px;
-
-      .row{
-        margin:-5px
+    
+    dl{
+      border-bottom:1px solid #e2e2e2;
+      dt{
+        padding:20px 15px;
+        padding-bottom:10px;
+        font-size:12px;
+        font-weight:bold;
       }
-      .col{
-        padding:5px;
-      }
-
-      .photo{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow:hidden;
-        border-radius:10px;
-        border:1px solid #e2e2e2;
-
-        img{
-          position:absolute;
-          width:150%;
-        }
-      }
-      .photo:after{
-        content:'';
-        display:block;
-        padding-bottom:100%;
-      }
-
-      .photo:nth-child(3n){
-        margin-right:0px;
+      dd{
+        padding:20px 15px;
+        padding-top:0px;
       }
     }
 
-    dl{
+    dl.accordion{
       dt{
-        font-size:16px;
-        font-weight:bold;
-        margin-bottom:15px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height:50px;
+        padding:0 15px;
       }
     }
 
@@ -423,44 +303,32 @@ export default {
         .item{
           display:flex;
           align-items: center;
-          border:1px solid #e2e2e2;
-          padding:15px;
-          border-radius:5px;
+          justify-content: space-between;
           margin-bottom:10px;
-
-          .left{
+          
+          label{
+            display:flex;
+            align-items: center;
+            padding:0 10px;
             flex:1;
-            label{
-              display:block;
-              font-size:14px;
-            }
-            .price{
-              display:flex;
-              align-items: center;
-              font-size:12px;
-              span{
-                text-decoration: line-through;
-                color:#999;
-              }
-              strong{
-                margin-left:5px;
-              }
-            }
+            background:#f8f8f8;
+            margin-right:10px;
+            font-size:13px;
+            border-radius:4px;
+            height:40px;
           }
 
-          .amount{
+          span{
             display:flex;
             justify-content: center;
             align-items: center;
-            border-radius:18px;
-            width:30px;
-            height:30px;
-            font-size:12px;
-            background:#f2f2f2;
-          }
-          .total{
-            width:90px;
-            text-align:right;
+            width:40px;
+            height:40px;
+            font-size:13px;
+            border-radius:4px;
+            padding:10px;
+            font-weight:500;
+            background:#FBF5F7;
           }
         }
 
@@ -476,85 +344,45 @@ export default {
           }
         }
 
-        .price_total{
-          background:#f2f2f2;
-          border-radius:5px;
-          padding:15px;
-          display:flex;
-          align-items: center;
-          justify-content: space-between;
-          span{font-size:12px;}
-          strong{font-weight:bold;}
-        }  
-      }
-    }
-
-
-    .user_message {
-      p {
-        padding: 15px;
-        background: #f8f6f1;
-        margin-bottom:5px;
-        border-radius:5px;
-      }
-    }
-
-    .admin_message{
-      dd{
-        border:1px solid #16AF80;
-        padding:15px;
-        border-radius:5px;
-
-        span{
-          display:block;
-          color:#898989;
+        .item:last-child{
+          margin-bottom:0px;
         }
-        strong{
-          display:block;
-          font-size:14px;
-          margin-top:5px;
-        }
-      }
 
-      dd.photos{
-        padding:0px;
-        border:0px;
-      }
-    }
-
-    .add_work{
       
-      .cont{
-        
-        .price{
-          display:flex;
-          align-items: center;
-          
-          span{
-            width:70px;
-            color:#898989;
-          }
+      }
+    }
+
+    .message {
+      dd{
+        .message_item{
+          background:#F8F5F1;
+          border-radius:5px;
+          padding:10px;
+          margin-bottom:10px;
           strong{
-            font-size:14px;
-            flex:1;
+            font-weight:normal;
+            font-size:11px;
+            color:#898989;
+            display:block;
+            margin-bottom:5px;
+          }
+          span{
+            display:block;
+            font-size:13px;
           }
         }
-
-        .post{
-          display:flex;
-          margin-top:10px;
-          background:#f2f2f2;
-          padding:15px;
-          border-radius:5px;
-
-          strong{
-            font-size:14px;
-            flex:1;
-            font-weight:normal;
-          }
+        .message_item:last-child{
+          margin-bottom:0px;
         }
       }
     }
+    .message.admin {
+      dd{
+        .message_item{
+          background:#EFF5F3;
+        }
+      }
+    }    
   }
 
   .page_bottom{
