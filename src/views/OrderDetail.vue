@@ -44,6 +44,29 @@
         </dd>
       </dl>
 
+      <dl class="add_price">
+        <dt>추가결제요청</dt>
+        <dd>
+          <div class="price">
+            <span>요청금액</span>
+            <strong>30,000 원</strong>
+          </div>
+          <div class="text">
+            1,000원 무지성 추가입니다 무조건 결제해주세요
+          </div>
+          <div class="divider"/>
+          <div class="images">
+            <v-row>
+              <v-col cols="3" v-for="item in 5" :key="item">
+                <div class="image_box" v-ripple @click="$refs.imageView.handle(true)">
+                  <img src="https://picsum.photos/300/300">
+                </div>
+              </v-col>
+            </v-row>
+          </div>
+        </dd>
+      </dl>
+
       <dl class="message admin">
         <dt>본사 작업안내</dt>
         <dd>
@@ -111,18 +134,19 @@
         </v-btn>
       </div>
     </div>
-   
+
+    <ImageView ref="imageView"/>
   </div>
 </template>
 
 <script>
-
+import ImageView from '@/components/modal/imageView'
 
 export default {
+  components:{ImageView,},
   data() {
     return {
       tabActive:0,
-
       photos: [
         {
           src: "https://source.unsplash.com/random",
@@ -222,8 +246,6 @@ export default {
       }
     }
 
-    
-
     .history{
       display:flex;
       align-items: center;
@@ -263,12 +285,6 @@ export default {
 
   .page_cont{
     background:#fff;
-
-    .divider{
-      height:1px;
-      background:#e2e2e2;
-      margin:30px 0;
-    }
     
     dl{
       border-bottom:1px solid #e2e2e2;
@@ -382,7 +398,66 @@ export default {
           background:#EFF5F3;
         }
       }
-    }    
+    }
+
+    .add_price{
+      .price{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height:40px;
+        padding:0 10px;
+        border:1px solid #e2e2e2;
+        margin-bottom:10px;
+        border-radius:4px;
+
+        span{
+          font-size:11px;
+          color:#898989;
+        }
+      }
+      .text{
+        font-size:13px;
+        padding:10px;
+        border-radius:4px;
+        background:#f2f2f2;
+      }
+      .divider{
+        height:1px;
+        background:#e2e2e2;
+        margin:15px 0;
+      }
+
+      .images{
+        .row{
+          margin:-5px;
+        }
+        .col{
+          padding:5px;
+        }
+
+        .image_box{
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          height:100%;
+          border-radius:4px;
+          overflow:hidden;
+
+          img{
+            position: absolute;
+            width:100%;
+          }
+        }
+
+        .image_box:after{
+          content:'';
+          display:block;
+          padding-bottom:100%;
+        }
+      }
+    }
   }
 
   .page_bottom{

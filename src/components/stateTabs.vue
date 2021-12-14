@@ -95,13 +95,13 @@ export default {
     padding: 8px;
 
     dt {
-      font-size: 11px;
+      font-size: 10px;
       text-align: center;
     }
     dd {
       text-align: center;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 500;
       margin-top: 4px;
     }
   }

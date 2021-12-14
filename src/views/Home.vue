@@ -139,14 +139,14 @@ export default {
       padding: 8px;
 
       dt {
-        font-size: 11px;
+        font-size: 10px;
         text-align: center;
       }
       dd {
         text-align: center;
         font-size: 18px;
+        line-height:1.4;
         font-weight: 600;
-        margin-top: 4px;
       }
     }
   }
