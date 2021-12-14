@@ -47,6 +47,9 @@
       <dl class="add_price">
         <dt>추가결제요청</dt>
         <dd>
+          <div class="complete">
+            추가결제가 완료되었습니다
+          </div>
           <div class="price">
             <span>요청금액</span>
             <strong>30,000 원</strong>
@@ -401,6 +404,16 @@ export default {
     }
 
     .add_price{
+      .complete{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border:1px solid #DF0E68;
+        margin-bottom:10px;
+        height:40px;
+        border-radius:4px;
+        color:#DF0E68;
+      }
       .price{
         display:flex;
         align-items: center;
