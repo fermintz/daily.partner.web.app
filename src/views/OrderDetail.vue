@@ -18,7 +18,7 @@
         </dl>
 
         <dl class="order_number">
-          <dt>사용자번호</dt>
+          <dt>주문번호</dt>
           <dd>3IHH27-<strong>8D50</strong></dd>
         </dl>
       </div>

@@ -41,7 +41,7 @@
           <v-icon>mdi-phone</v-icon>
           <span>전화</span>
         </v-btn>
-        <v-btn text class="next" @click.stop="$router.push('checkOrder')">
+        <v-btn text class="next" @click.stop="$router.push('productCheck')">
           <span>{{next}}</span>
           <v-icon>mdi-arrow-right</v-icon>
         </v-btn>

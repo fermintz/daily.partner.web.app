@@ -7,7 +7,9 @@
       <h2>4561 주문검수</h2>
     </div>
 
-    <div class="line_box" />
+    <div class="page_title">
+      <h2>입고된 상품을<br>꼼꼼하게 검수해주세요</h2>
+    </div>
 
     <div class="page_cont">
       <dl class="user_list">
@@ -50,7 +52,7 @@
     
     <div class="page_bottom">
       <v-btn text class="add" @click="$router.push('product')">상품추가</v-btn>
-      <v-btn text class="next" @click="$router.push('finishCheck')">다음으로</v-btn>
+      <v-btn text class="next" @click="$router.push('question')">다음으로</v-btn>
     </div>
   </div>  
 </template>
@@ -95,29 +97,11 @@ export default {
     background:#f2f2f2;
   }
 
-  .page_top{
-    padding:15px;
-    h4{
-      font-size:16px;
-      margin-bottom:10px;
-    }
+  .page_title{
+    padding:20px;
+    h2{
+      font-size:24px;
 
-    .list{
-
-      border-radius:5px;
-      dl{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom:5px;
-        background:#f8f8f8;
-        height:30px;
-        padding:0 10px;
-        border-radius:5px;
-      }
-      dl:last-child{
-        margin-bottom:0;
-      }
     }
   }
 

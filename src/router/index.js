@@ -5,11 +5,14 @@ import OrderDetail from "../views/OrderDetail.vue";
 import HistoryView from "../views/History.vue";
 import SearchView from "../views/SearchView.vue";
 import MapView from "../views/MapView.vue";
-import CheckOrder from "../views/CheckOrder"
 import Product from '../views/Product'
-import FinishCheck from '../views/FinishCheck'
 import PostMessage from '../views/PostMessage'
 import Calculate from '../views/Calculate'
+
+import ProductCheck from "../views/check/product"
+import AddCharge from "../views/check/addCharge"
+import FinishCheck from '../views/check/finish'
+import Question from "../views/check/question"
 
 Vue.use(VueRouter);
 
@@ -39,21 +42,13 @@ const routes = [
     name: "mapView",
     component: MapView,
   },
-  {
-    path: "/checkOrder",
-    name: "checkOrder",
-    component: CheckOrder,
-  },
+  
   {
     path: "/product",
     name: "product",
     component: Product,
   },
-  {
-    path: "/finishCheck",
-    name: "finishCheck",
-    component: FinishCheck,
-  },
+  
   {
     path: "/postMessage",
     name: "postMessage",
@@ -63,6 +58,30 @@ const routes = [
     path: "/calculate",
     name: "calculate",
     component: Calculate,
+  },
+
+
+  {
+    path: "/productCheck",
+    name: "productCheck",
+    component: ProductCheck,
+  },
+  {
+    path: "/addCharge",
+    name: "addCharge",
+    component: AddCharge,
+  },
+
+  {
+    path: "/finishCheck",
+    name: "finishCheck",
+    component: FinishCheck,
+  },
+  
+  {
+    path: "/question",
+    name: "question",
+    component: Question,
   },
   
 ];

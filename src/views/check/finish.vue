@@ -4,7 +4,7 @@
       <v-btn icon @click="$router.go(-1)">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
-      <h2>변동사항 확인</h2>
+      <h2>최종확인</h2>
     </div>
 
     <div class="page_cont">
@@ -49,40 +49,25 @@
           </dd>
         </dl>
 
-        <!-- <dl class="user_product check">
-          <dt>변동내역</dt>
-          <dd>
-            <div class="item">
-              <div class="left">
-                <label>와이셔츠</label>
-                <div class="price">
-                  <span>4,000원</span>
-                  <strong>3,000원</strong>
-                </div>
-              </div>
-              <div class="amount">
-                2
-              </div>
-              <div class="total">
-                8,000 원
-              </div>
-            </div> 
-          </dd>
-        </dl> -->
+        <div class="change_price">
+          <span>상품 변동금액</span>
+          <strong>12,000 원</strong>
+        </div>
       </div> <!--inner -->
 
       <div class="line_bar" />
 
       <div class="inner">
-        <dl class="add_wash">
-          <dt>추가금액 필요 요청</dt>
+        <dl class="add_charge">
+          <dt>추가세탁 필요요청</dt>
           <dd>
-            <div class="input_box">
-              <input type="number" placeholder="추가요청금액을 입력">
-              <span>원</span>
+            <div class="price">
+              <span>요청금액</span>
+              <strong>5,000 원</strong>
             </div>
-
-            <textarea placeholder="추가세탁이 필요한 이유를 상세히 작성해주세요" />
+            <div class="why">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, nulla cum vitae perspiciatis at quo eveniet fuga voluptatem enim fugit voluptate consectetur voluptas? Quos omnis harum, incidunt doloremque ullam enim.
+            </div>
           </dd>
         </dl>
 
@@ -90,18 +75,10 @@
           <dt>추가세탁필요 참고 사진첨부</dt>
           <dd>
             <v-row>
-              <v-col cols="4" v-for="item in 5" :key="item">
+              <v-col cols="3" v-for="item in 3" :key="item">
                 <div class="photo">
                   <img src="https://source.unsplash.com/random"/>
-                  <v-btn text icon class="close">
-                    <v-icon>mdi-close</v-icon>
-                  </v-btn>
                 </div>
-              </v-col>
-              <v-col cols="4">
-                <v-btn text class="add_btn">
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
               </v-col>
             </v-row>
           </dd>
@@ -132,7 +109,7 @@
               <div class="info_item">
                 <span>
                   <v-icon class="plus">mdi-plus-circle</v-icon>
-                  추가요청
+                  추가요청 금액
                 </span>
                 <strong>5,000 원</strong>
               </div>
@@ -177,9 +154,7 @@
       font-size:16px;
       margin-left:5px;
     }
-  }
-
-  
+  }  
 
   .page_cont{
 
@@ -190,13 +165,14 @@
     .line_bar{
       height:10px;
       background:#f2f2f2;
+      margin:10px 0;
     }
 
     dl{
       dt{
         font-size:16px;
         font-weight:bold;
-        margin-bottom:10px;
+        margin-bottom:15px;
       }
     }
   
@@ -264,72 +240,40 @@
             }
           }
         }
-
-        .price_total{
-          background:#f2f2f2;
-          border-radius:5px;
-          padding:15px;
-          display:flex;
-          align-items: center;
-          justify-content: space-between;
-          span{font-size:12px;}
-          strong{font-weight:bold;}
-        }  
       }
     }
 
-    .user_product.check{
-      margin-top:30px;
-      dd{
-        .item{
-          background:#FBEFF4;
-          border:0px;
-          .amount{
-            color:#f11064;
-            background:#fff;
-          }
-          .total{
-            color:#f11064;
-          }
-        }
-      }      
+    .change_price{
+      display:flex;
+      justify-content: space-between;
+      margin-top:15px;
+      align-items: flex-end;
+      
+      span{}
+      strong{
+        font-size:18px;
+        font-family:'Roboto';
+      }
     }
 
-    .add_wash{
-      .input_box{
-        position: relative;
+    .add_charge{
+      .price{
         display:flex;
-        overflow: hidden;
-        align-items: center;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom:15px;
+        strong{
+          font-size:18px;
+          font-family:'Roboto';
+        }
+      }
 
-        input{
-          width:100%;
-          height:50px;
-          padding:0 60px 0 10px;
-          font-size:14px;
-          border:1px solid #c2c2c2;
-          border-radius:5px;
-        }
-        span{
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width:50px;
-          height:50px;
-          position: absolute;
-          right:0px;
-        }
-      }
-      textarea{
-        width:100%;
-        border:1px solid #c2c2c2;
-        border-radius:5px;
-        margin-top:15px;
-        height:100px;
-        resize: none;
+      .why{
+        background:#f2f2f2;
         padding:10px;
+        border-radius:5px;
       }
-    }
+    }    
 
     .add_photo{
       margin-top:30px;
@@ -389,6 +333,7 @@
 
     .total_info{
       padding:20px;
+      padding-bottom:20px;
       .gray_box{
         margin-top:20px;
 
@@ -425,7 +370,6 @@
 
 
   .page_bottom{
-    
     width:100%;
     border-top:1px solid #e2e2e2;
     position: fixed;
