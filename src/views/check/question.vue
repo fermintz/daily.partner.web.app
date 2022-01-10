@@ -67,7 +67,7 @@
   .page_cont{
     padding:20px;
     .btn{
-      border:1px solid #c2c2c2;
+      border:1px solid #d2d2d2;
       margin-bottom:20px;
       padding:15px;
       display:flex;

@@ -181,7 +181,7 @@
         .item{
           display:flex;
           align-items: center;
-          border:1px solid #e2e2e2;
+          border:1px solid #d2d2d2;
           padding:15px;
           border-radius:5px;
           margin-bottom:10px;
@@ -371,7 +371,7 @@
 
   .page_bottom{
     width:100%;
-    border-top:1px solid #e2e2e2;
+    border-top:1px solid #d2d2d2;
     position: fixed;
     bottom:0px;
     padding:10px;
