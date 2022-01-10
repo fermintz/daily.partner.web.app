@@ -13,13 +13,18 @@
 
     <div class="page_cont">
       <div class="btn" v-ripple  @click="$router.push('addCharge')">
-        <span>네 오염도가 심해 추가세탁이 필요합니다.</span>
+        <div class="text">
+          <strong>네 오염도가 심해 추가세탁이 필요합니다.</strong>
+          <span>추가요금을 요청합니다.</span>
+        </div>
         <v-icon>
           mdi-chevron-right
         </v-icon>
       </div>
       <div class="btn" v-ripple @click="$router.push('finishCheck')">
-        <span>아니요, 필요없습니다.</span>
+        <div class="text">
+          <strong>아니요, 필요없습니다.</strong>
+        </div>
         <v-icon>
           mdi-chevron-right
         </v-icon>
@@ -68,9 +73,18 @@
       display:flex;
       justify-content: space-between;
       border-radius:5px;
-      span{
+      .text{
         flex:1;
-        font-size:16px;
+        strong{
+          display:block;
+          font-size:16px;
+        }
+        span{
+          display:block;
+          font-size:12px;
+          margin-top:5px;
+          color:#DF0E68
+        }
       }
       .v-icon{
         margin-left:30px;
