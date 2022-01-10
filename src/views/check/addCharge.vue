@@ -16,7 +16,7 @@
     <div class="page_cont">
 
         <dl class="add_price">
-          <dt>추가금액입력</dt>
+          <dt>요청금액 입력</dt>
           <dd>
             <input type="number" placeholder="0">
             <span>원</span>
