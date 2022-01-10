@@ -18,7 +18,7 @@
           <span>추가요금을 요청합니다.</span>
         </div>
         <v-icon>
-          mdi-chevron-right
+          mdi-arrow-right-circle
         </v-icon>
       </div>
       <div class="btn" v-ripple @click="$router.push('finishCheck')">
@@ -26,7 +26,7 @@
           <strong>아니요, 필요없습니다.</strong>
         </div>
         <v-icon>
-          mdi-chevron-right
+          mdi-arrow-right-circle
         </v-icon>
       </div>
     </div>
@@ -88,6 +88,7 @@
       }
       .v-icon{
         margin-left:30px;
+        color:#292929;
       }
     }
   }
