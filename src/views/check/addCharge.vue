@@ -120,7 +120,7 @@
 
         input{
           flex:1;
-          border-bottom:1px solid #e2e2e2;
+          border-bottom:1px solid #292929;
           height:40px;
           text-align:right;
           outline: none;
@@ -129,7 +129,7 @@
           font-weight:bold;
           font-family:'Roboto';
           &:focus{
-            border-color:#008BE8
+            border-bottom:2px solid #008BE8
           }
         }
 
@@ -145,10 +145,15 @@
         textarea{
           width:100%;
           resize:none;
-          height:100px;
+          height:150px;
           padding:10px;
-          border:1px solid #e2e2e2;
+          border:1px solid #292929;
           border-radius:5px;
+          outline: none;
+
+          &:focus{
+            border:2px solid #008BE8
+          }
         }
       }
     }
