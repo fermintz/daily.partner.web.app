@@ -9,42 +9,44 @@
 
     <div class="page_cont">
       <div class="inner">
-        <dl class="user_product">
-          <dt>고객 주문내역</dt>
+        <dl class="product_list not_check">
+          <dt>사용자가 요청한 세탁목록</dt>
           <dd>
-            <div class="item">
-              <div class="left">
-                <label>와이셔츠</label>
-                <div class="price">
-                  <strong>3,000원</strong>
+            <div class="item" v-for="item in 2" :key="item">
+              <div class="item_top">
+                <div class="left">
+                  <strong>바지/스커트</strong>
+                  <span>9,800원 (단가 4,900원)</span>
+                </div>
+                <div class="right">
+                  <div class="sum">
+                    7,800 원
+                  </div>
+                  <div class="amount">
+                    2
+                  </div>
                 </div>
               </div>
-              <div class="amount">
-                <span>1</span>
-                <v-icon>
-                  mdi-chevron-right
-                </v-icon>
-                <strong>2</strong>
-              </div>
-              <div class="total">
-                <span>12,000원</span>
-                <strong>24,000원</strong>
-              </div>
+          
             </div>
-            <div class="item">
-              <div class="left">
-                <label>정장하의</label>
-                <div class="price">
-
-                  <strong>3,000원</strong>
+          </dd>
+        </dl>
+        <dl class="product_list">
+          <dt>검수완료된 목록</dt>
+          <dd>
+            <div class="item" v-for="item in 2" :key="item">
+              <div class="item_top">
+                <div class="left">
+                  <strong>바지/스커트</strong>
+                  <span>9,800원 (단가 4,900원)</span>
+                </div>
+                <div class="right">
+                  <div class="amount">
+                    2
+                  </div>
                 </div>
               </div>
-              <div class="amount">
-                <span>1</span>
-              </div>
-              <div class="total">
-                <span>12,000원</span>
-              </div>
+          
             </div>
           </dd>
         </dl>
@@ -176,71 +178,123 @@
       }
     }
   
-    dl.user_product{
+    dl.product_list{
+      margin-bottom:30px;
+
+      &.product_list.not_check{
+        dd{
+          .item{
+            background:#f4f4f4;
+            border:0px;
+          }
+        } 
+        
+      }
+
+      dt{
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom:10px;
+      }
       dd{
+        .no_data{
+          background:#f8f8f8;
+          padding:10px;
+          margin-bottom:10px;
+          border-radius:5px;
+          color:#808989;
+        }
         .item{
-          display:flex;
-          align-items: center;
           border:1px solid #d2d2d2;
-          padding:15px;
           border-radius:5px;
           margin-bottom:10px;
-
-          .left{
-            flex:1;
-            label{
-              display:block;
+          .item_top{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:15px;
+            .left{
+              flex:1;
+              margin-right:15px;
+              strong{
+                font-size:14px;
+                display:block;
+              }
+              span{
+                font-size:12px;
+                display:block;
+                color:#898989;
+              }
             }
-            .price{
+            .right{
               display:flex;
               align-items: center;
-              font-size:12px;
-              span{
-                text-decoration: line-through;
-                color:#999;
-                margin-right:5px;
+              .amount{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                width:34px;
+                height:34px;
+                background:#e2e2e2;
+                margin-left:10px;
+                border-radius:17px;
+                font-weight:500;
               }
-
+              .v-btn{
+                margin-left:10px;
+                width:34px;
+                height:34px;
+                background:#e2e2e2;
+                .v-icon{
+                  font-size:18px;
+                }
+              }
             }
-          }
-
-          .amount{
-            display:flex;
-            align-items: center;
-            border-radius:18px;
-            height:30px;
-            border-radius:15px;
-            font-size:12px;
-            background:#f2f2f2;
-            padding:0 10px;
             
-            span{
-              
-            }
-
-            .v-icon{
-              font-size:18px;
-              margin:0 5px;
-            }
-          
-            strong{
-              color:#f11064
-            }
           }
-          .total{
-            width:90px;
-            text-align:right;
+          .item_bottom{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0 15px;
+            height:50px;
+            border-top:1px solid #e2e2e2;
 
-            span{
-              display:block;
+            .amount{
+              display:flex;
+              align-items: center;
+              .v-btn{
+                padding:0;
+                border:1px solid #c2c2c2;
+                height:24px;
+                min-width:30px;
+                border-radius:3px;
+                .v-icon{
+                  font-size:14px;
+                }
+              }
+              span{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width:40px;
+                border-radius:3px;
+                height:24px;
+                background:#f2f2f2;
+                margin:0 5px;
+              }
             }
+
             strong{
-              display:block;
-              color:#f11064
+              font-size:14px;
             }
           }
         }
       }
+    }
+
+    dl:last-child{
+      margin-bottom:0px;
     }
 
     .change_price{

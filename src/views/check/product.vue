@@ -15,15 +15,43 @@
       <dl class="user_list">
         <dt>사용자가 주문한 상품</dt>
         <dd>
+          <div class="item" v-for="item in 2" :key="item">
+            <div class="item_top">
+              <div class="left">
+                <strong>바지/스커트</strong>
+                <span>9,800원 (단가 4,900원)</span>
+              </div>
+              <div class="right">
+                <div class="amount">
+                  2
+                </div>
+                <v-btn icon>
+                  <v-icon>mdi-check</v-icon>
+                </v-btn>
+              </div>
+            </div>
+        
+          </div>
+        </dd>
+      </dl>
+      <dl class="admin_list">
+        <dt>검수중인 상품</dt>
+        <dd>
+          <div class="no_data">
+            추가된 상품이 없습니다
+          </div>
           <div class="item" v-for="item in 3" :key="item">
             <div class="item_top">
               <div class="left">
                 <strong>바지/스커트</strong>
                 <span>단가 4,900원</span>
               </div>
-              <v-btn icon>
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
+              <div class="right">
+                <v-btn icon>
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+              </div>
+              
             </div>
             <div class="item_bottom">
               <div class="amount">
@@ -37,14 +65,6 @@
               </div>
               <strong>12,900 원</strong>
             </div>
-          </div>
-        </dd>
-      </dl>
-      <dl class="admin_list">
-        <dt>추가된 상품</dt>
-        <dd>
-          <div class="no_data">
-            추가된 상품이 없습니다
           </div>
         </dd>
       </dl>
@@ -119,6 +139,7 @@ export default {
         .no_data{
           background:#f8f8f8;
           padding:10px;
+          margin-bottom:10px;
           border-radius:5px;
           color:#808989;
         }
@@ -132,6 +153,8 @@ export default {
             align-items: center;
             padding:15px;
             .left{
+              flex:1;
+              margin-right:15px;
               strong{
                 font-size:14px;
                 display:block;
@@ -142,14 +165,29 @@ export default {
                 color:#898989;
               }
             }
-            .v-btn{
-              width:34px;
-              height:34px;
-              background:#e2e2e2;
-              .v-icon{
-                font-size:18px;
+            .right{
+              display:flex;
+              .amount{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                width:34px;
+                height:34px;
+                background:#e2e2e2;
+                border-radius:17px;
+                font-weight:500;
+              }
+              .v-btn{
+                margin-left:10px;
+                width:34px;
+                height:34px;
+                background:#F8EEF2;
+                .v-icon{
+                  font-size:18px;
+                }
               }
             }
+            
           }
           .item_bottom{
             display:flex;
@@ -163,6 +201,7 @@ export default {
               display:flex;
               align-items: center;
               .v-btn{
+                
                 padding:0;
                 border:1px solid #c2c2c2;
                 height:24px;
