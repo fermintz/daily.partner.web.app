@@ -19,9 +19,6 @@
                   <span>9,800원 (단가 4,900원)</span>
                 </div>
                 <div class="right">
-                  <div class="sum">
-                    7,800 원
-                  </div>
                   <div class="amount">
                     2
                   </div>
