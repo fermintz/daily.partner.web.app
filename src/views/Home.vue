@@ -39,10 +39,10 @@
       />
     </div>
     <div class="state_list" v-show="stateTabActive === 1">
-      <OrderCard :btns="true" :csMessage="true" state="검토중" />
+      <OrderCard :btns="true" :csMessage="true" state="추가결제" />
     </div>
     <div class="state_list" v-show="stateTabActive === 2">
-      <OrderCard state="검토완료" next="작업시작"/>
+      <OrderCard state="결제완료" next="작업시작"/>
     </div>
     <div class="state_list" v-show="stateTabActive === 3">
       <OrderCard next="작업완료" state="작업중"/>
@@ -86,11 +86,11 @@ export default {
           number: 2,
         },
         {
-          name:"검토중",
+          name:"추가결제",
           number: 1,
         },
         {
-          name:"검토완료",
+          name:"결제완료",
           number: 2,
         },
         {
@@ -197,7 +197,7 @@ export default {
     }
   }
   .v-btn.active{
-    background:#292929;
+    background:#0007EE;
     color:#fff;
   }
   

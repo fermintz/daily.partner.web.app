@@ -182,6 +182,8 @@ export default {
         background:#292929;
         color:#fff;
         height:50px;
+        font-size:13px;
+        font-weight:bold;
       }
     }
 
