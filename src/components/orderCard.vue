@@ -2,7 +2,7 @@
   <div class="item" @click.stop="$router.push('orderDetail')">
     <div class="item_top">
       <div class="state">
-        <span>검수대기</span>
+        <span>{{state}}</span>
       </div>
       <div class="order-num">
         <dl class="date">
@@ -94,11 +94,10 @@ export default {
 
 .item{
   position: relative;
-  margin-top:10px;
+  margin-bottom:10px;
   background:#fff;
   border-top:1px solid #e2e2e2;
   border-bottom:1px solid #c2c2c2;
-
   
   .item_top{
     display:flex;

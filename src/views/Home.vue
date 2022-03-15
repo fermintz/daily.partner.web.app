@@ -20,14 +20,26 @@
     </div>
 
     <div class="list_controls">
-
+      <v-btn 
+        text 
+        :class="{active:listControls === index}"
+        @click="listControls = index" 
+        v-for="(item, index) in ['주문순','예약일순','수거순']" :key="item">
+        {{item}}
+      </v-btn>
     </div>
 
     <div class="state_list" v-show="stateTabActive === 0">
-      <OrderCard state="검수대기" next="검수" csMessage="false" @modalShow="e => $refs.productModal.handle(e)"/>
+      <OrderCard 
+        state="검수대기" 
+        next="검수" 
+        csMessage="false" 
+        @modalShow="e => $refs.productModal.handle(e)"
+        v-for="item in 10" :key="item"
+      />
     </div>
     <div class="state_list" v-show="stateTabActive === 1">
-      <OrderCard :btns="true" :csMessage="true" state="검토중"/>
+      <OrderCard :btns="true" :csMessage="true" state="검토중" />
     </div>
     <div class="state_list" v-show="stateTabActive === 2">
       <OrderCard state="검토완료" next="작업시작"/>
@@ -66,6 +78,7 @@ export default {
   },
   data() {
     return {
+      listControls:0,
       stateTabActive: 0,
       stateTabs: [
         {
@@ -110,8 +123,6 @@ export default {
   background: #f8f8f8;
 
   .stateTabs {
-    position:sticky;
-    top:0px;
     display: flex;
     border-bottom: 1px solid #e2e2e2;
     background:#fff;
@@ -158,6 +169,38 @@ export default {
       }
     }
   }
+}
+
+.list_controls{
+  display:flex;
+  align-items: center;
+  background:#fff;
+  margin-top:10px;
+  border-top:1px solid #292929;
+  padding:10px;
+  padding-left:10px;
+  overflow-x:auto;
+
+  &::-webkit-scrollbar{
+    display:none;
+  }
+
+
+  .v-btn{
+    border-radius:5px;
+    height:32px;
+    margin-right:5px;
+    font-size:13px;
+    background:#f2f2f2;
+    &:last-child{
+      border-right:0px;
+    }
+  }
+  .v-btn.active{
+    background:#292929;
+    color:#fff;
+  }
+  
 }
 
 .no-data{
