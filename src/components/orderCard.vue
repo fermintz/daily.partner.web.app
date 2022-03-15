@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="product-info">
-          <dl class="amount" @click.stop="()=>{}" v-ripple>
+          <dl class="amount" @click.stop="modalShow(true)" v-ripple>
             <dt>상품</dt>
             <dd>3</dd>
           </dl>
@@ -45,6 +45,10 @@
         </div>
       </div>
       <div class="right">
+        <dl class="pickup">
+          <dt>수거</dt>
+          <dd>01.23</dd>
+        </dl>
         <v-btn text @click.stop="()=>{}">
           검수시작
         </v-btn>
@@ -78,6 +82,11 @@
 <script>
 export default {
   props:['state','message','csMessage','btns','next'],
+  methods:{
+    modalShow(value){
+      this.$emit('modalShow',value)
+    }
+  },
 }
 </script>
 
@@ -157,7 +166,18 @@ export default {
 
     .right{
       display:Flex;
+      flex-direction: column;
+      justify-content: space-between;
       align-items: flex-end;
+      dl.pickup{
+        text-align:right;
+        dt{
+          font-size:10px;
+        }
+        dd{
+          font-weight:bold;
+        }
+      }
       .v-btn{
         width:80px;
         background:#292929;

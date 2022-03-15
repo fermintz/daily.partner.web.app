@@ -19,8 +19,12 @@
       </dl>
     </div>
 
+    <div class="list_controls">
+
+    </div>
+
     <div class="state_list" v-show="stateTabActive === 0">
-      <OrderCard state="검수대기" next="검수" csMessage="false"/>
+      <OrderCard state="검수대기" next="검수" csMessage="false" @modalShow="e => $refs.productModal.handle(e)"/>
     </div>
     <div class="state_list" v-show="stateTabActive === 1">
       <OrderCard :btns="true" :csMessage="true" state="검토중"/>
@@ -34,6 +38,8 @@
     <div class="state_list" v-show="stateTabActive === 4">
       <OrderCard :btns="true" state="작업완료" :csMessage="true"/>
     </div>
+
+    <ProductModal ref="productModal"/> 
   </div>
 </template>
 
@@ -45,6 +51,7 @@ import PhotoSetModal from "@/components/modal/photo.vue";
 import Snackbars from "@/components/snackbars.vue";
 import Progress from '../components/modal/progress.vue';
 import Checking from '@/components/modal/checking.vue'
+import ProductModal from '@/components/modal/product.vue';
 
 export default {
   components: {
@@ -54,7 +61,8 @@ export default {
     PhotoSetModal,
     Snackbars,
     Progress,
-    Checking
+    Checking,
+    ProductModal
   },
   data() {
     return {
