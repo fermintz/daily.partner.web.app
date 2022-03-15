@@ -107,8 +107,6 @@ export default {
         return markerImg;
       }
       
-      
- 
       this.pickupData.forEach((item) => {
         let size = new kakao.maps.Size(22, 26);
         let option = {  

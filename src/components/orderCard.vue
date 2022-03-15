@@ -2,54 +2,76 @@
   <div class="item" @click.stop="$router.push('orderDetail')">
     <div class="item_top">
       <div class="state">
-        <span class="refound">반품</span>
-        <span class="state_name">{{state}}</span>
+        <span>검수대기</span>
       </div>
-      <div class="order_date">
-        <span>입고일</span>
-        <strong>21.10.31</strong>
+      <div class="order-num">
+        <dl class="date">
+          <dt>주문</dt>
+          <dd>21.01.26</dd>
+        </dl>
+        <div class="v-divider" />
+        <dl class="num">
+          <dt>번호</dt>
+          <dd>EE6B12-<span>2600</span></dd>
+        </dl>
       </div>
     </div>
-
+    
     <div class="item_middle">
-      <div class="d-row">
-        <dl class="order_amount">
-          <dt>상품</dt>
-          <dd>72</dd>
-        </dl>
-        <dl class="order_number">
-          <dt>주문번호</dt>
-          <dd>3IHH27-<b>8D50</b></dd>
-        </dl>
+      <div class="left">
+        <div class="order-info">
+          <div class="box">
+            <span class="date">01.26</span>
+            <span class="week">월요일</span>
+            <span class="time">20시</span>
+          </div>
+          <div class="user">
+            <span class="name">박수민</span>
+            <span class="phone">
+              <a @click.stop="()=>{}">010-8525-4561</a>
+            </span>
+            <span class="address">부산 부산진구 중앙대로 956 마레블루 803호</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <dl class="amount" @click.stop="()=>{}" v-ripple>
+            <dt>상품</dt>
+            <dd>3</dd>
+          </dl>
+          <dl class="price">
+            <dt>금액</dt>
+            <dd>28,800원</dd>
+          </dl>
+        </div>
       </div>
-
-      <div class="message" v-show="!message">
-        <strong>고객요청</strong>
-        <span>명품류 주의요청(단추/와펜 등) <br/><br/>청바지 접어 놓았어요 바지좀 줄여주세요!</span>
-      </div>
-      <div class="message cs" v-show="!csMessage">
-        <strong>검토안내</strong>
-        <span>
-          오염이 심한 와이셔츠는 1개 취소. 나머지 상품만 작업시작
-        </span>
-      </div>
-    </div>
-
-    <div class="bottom_btns" v-show="!btns">
-      <div class="btn_inner">
-        <v-btn text class="phone">
-          <v-icon>mdi-phone</v-icon>
-          <span>전화</span>
-        </v-btn>
-        <v-btn text class="next" @click.stop="$router.push('productCheck')">
-          <span>{{next}}</span>
-          <v-icon>mdi-arrow-right</v-icon>
+      <div class="right">
+        <v-btn text @click.stop="()=>{}">
+          검수시작
         </v-btn>
       </div>
+      
     </div>
-    
-    
-
+    <div class="item_bottom">
+      <dl class="user">
+        <dt>고객</dt>
+        <dd>
+          <span>명품류 주의요청(단추/와펜 등)</span>
+          <span>조심해서 다뤄주세요</span>
+        </dd>
+      </dl>
+      <dl class="memo">
+        <dt>메모</dt>
+        <dd>
+          <span>명품류 확인/명품 자켓 재세탁</span>
+        </dd>
+      </dl>
+      <dl class="master">
+        <dt>본사</dt>
+        <dd>
+          <span>추가결제가 완료되었습니다 세탁요망</span>
+        </dd>
+      </dl>
+    </div>
   </div> <!-- item -->
 </template>
 
@@ -75,15 +97,8 @@ export default {
     justify-content: space-between;
     height:44px;
     border-bottom:1px solid #e2e2e2;
-    padding:0 15px;
+    padding:0 10px;
 
-    .order_date{
-      span{
-        font-size:10px;
-        color:#898989;
-        margin-right:10px;
-      }
-    }
     .state{
       display:flex;
       align-items: center;
@@ -92,127 +107,185 @@ export default {
         display:flex;
         align-items: center;
         justify-content: center;
-        height:20px;
-        padding:0 5px;
-        color:#fff;
-        border-radius:3px;
-        margin-right:5px;
-        font-size:10px;
+        background:#f2f2f2;
+        padding:0 10px;
+        border-radius:5px;
+        height:24px;
+        font-size:12px;
       }
-      .refound{
-        background:#d22828;
+    }
+
+    .order-num{
+      display:flex;
+      align-items: center;
+      .v-divider{
+        height:12px;
+        width:1px;
+        background:#e2e2e2;
+        margin:0 10px;
       }
-      .state_name{
-        background:#008BE8;
+      dl{
+        display:flex;
+        align-items: center;
+
+        dt{
+          font-size:10px;
+          margin-right:5px;
+        }
+        dd{
+          font-size:13px;
+          font-weight:bold;
+        }
+      }
+
+      dl.num{
+        dd{
+          span{color:#de0059;}
+        }
       }
     }
   }
 
   .item_middle{
-    padding:15px;
-    .d-row{
+    display:flex;
+    padding:10px;
+
+    .left{
+      flex:1;
+      margin-right:15px;
+    }
+
+    .right{
+      display:Flex;
+      align-items: flex-end;
+      .v-btn{
+        width:80px;
+        background:#292929;
+        color:#fff;
+        height:50px;
+      }
+    }
+
+    .order-info{
+      display:flex;
+
+
+      .box{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction:column;
+        width:70px;
+        height:70px;
+        border-radius:5px;
+        border:1px solid #008BE8;
+        margin-right:10px;
+        span{
+          line-height:1.2;
+        }
+        span.date{
+          color:#797979;
+          font-size:10px;
+        }
+        span.week{
+          margin:2px 0;
+          font-size:14px;
+          color:#008BE8
+        }
+        span.time{
+          font-size:12px;
+        }
+      }
+      .user{
+        flex:1;
+        span{display:block;}
+        span.name{
+          margin-bottom:3px;
+        }
+        span.phone{
+          margin-bottom:3px;
+          a{color:#08B882;}
+        }
+      }
+    }
+
+    .product-info{
       display:flex;
       align-items: center;
+      margin-top:10px;
       dl{
-        margin-right:15px;
+        display:flex;
+        align-items: center;
+        margin-right:5px;
+        background:#f2f2f2;
+        height:24px;
+        padding:0 10px;
+        border-radius:5px;
         dt{
           font-size:10px;
-          color:#898989;
+          margin-right:5px;
         }
         dd{
-          font-size:20px;
-          line-height:1;
-          margin-top:2px;
           font-weight:bold;
         }
       }
-      dl.order_number{
+      dl.amount{
+        background:#F6E8EE;
         dd{
-          b{
-            color:#008BE8
+          color:#de0059;
+        }
+      }
+    }
+  }
+
+  .item_bottom{
+    padding:10px;
+    padding-top:0px;
+    dl{
+      background:#f2f2f2;
+      margin-bottom:5px;
+      display:flex;
+      border-radius:5px;
+      padding:10px;
+      &:last-child{
+        margin-bottom:0;
+      }
+      dt{
+        width:40px;
+        font-size:10px;
+      }
+      dd{
+        span{
+          display:block;
+          margin-bottom:3px;
+          font-size:12px;
+
+          &:last-child{
+            margin-bottom:0;
           }
         }
       }
-      dl.order_amount{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width:56px;
-        height:56px;
-        border:1px solid #e2e2e2;
-        border-radius:5px;
-
+    }
+    .user{
+      background: #F8F7F4;
+      dt{
+        color:#F07810;
       }
     }
-
-    .message{
-      display:flex;
-      background:#FBF5F7;
-      padding:10px;
-      border-radius:5px;
-      margin-top:10px;
-
-      strong{
-        color:#d22828;
-        font-size:12px;
-        margin-right:20px;
-      }
-      span{
-        font-size:12px;
-        flex:1;
+    .memo{
+      background: #F2F2FE;
+      dt{
+        color:#0007EE;
       }
     }
-
-    .message.cs{
-      background:#f8f8f8;
-      strong{
-        color:#16AF80
+    .master{
+      background: #F7F0F5;
+      dt{
+        color:#de0059
       }
-    }
-
-  }
-
-  
-  .bottom_btns{
-    padding:10px;
-    padding-top:0px;
-
-    .btn_inner{
-      display:flex;
-      border:1px solid #c2c2c2;
-      border-radius:5px;
-      overflow:hidden;
     }
     
-    .v-btn{
-      fleX:1;
-      height:40px;
-      border-radius:0px;
-      font-size:14px;
-      border-right:1px solid #c2c2c2;
-
-      .v-icon{
-        font-size:14px;
-        
-      }
-    }
-    .v-btn.phone{
-      .v-icon{
-        color:#16AF80;
-        margin-right:5px;
-      }
-    }
-
-    .v-btn.next{
-      flex:2;
-      border-right:0;
-      .v-icon{
-        margin-right:0;
-        margin-left:5px;
-        color:#008BE8;
-      }
-    }
   }
+
 }
 </style>
